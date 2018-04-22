@@ -1,0 +1,674 @@
+%% abtex2-modelo-projeto-pesquisa.tex, v-1.9.6 laurocesar
+%% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-projeto-pesquisa.tex
+%% and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Projeto de pesquisa em conformidade com 
+% ABNT NBR 15287:2011 Informação e documentação - Projeto de pesquisa -
+% Apresentação 
+% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	article,			% indica que é um artigo acadêmico
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto. Oposto a twoside
+	%twoside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	subsubsubsection=TITLE, % títulos de subsubsubseções em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	%french,			% idioma adicional para hifenização
+	%spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+%\usepackage[none]{hyphenat} 			% Desativa ifenização
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{%
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Configurações do modelo IFPR
+\usepackage{abntex2ifpr}
+
+% ---
+% Informações de dados para CAPA, FOLHA DE ROSTO e FOLHA DE APROVAÇÃO
+% ---
+\titulo{Modelo para trabalhos acadêmicos no IFPR com \abnTeX}
+\autor{Mateus Mercer e Equipe \abnTeX}
+\local{Londrina}
+\data{2018}
+\orientador{INSIRA O ORIENTADOR}
+%\coorientador{INSIRA O COORIENTADOR}
+\convidadoum{INSIRA O CONVIDADO 1}
+\convidadodois{INSIRA O CONVIDADO 2}
+\curso{Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Trabalho de Conclusão de Curso apresentado ao \imprimircurso do Instituto 
+Federal do Paraná \@\textendash\@ Campus Londrina, como 
+requisito parcial de avaliação.}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{%
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=false,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ---
+% Aonde as imagens estao
+% ---
+\graphicspath{{imagens/}}
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+
+% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+% imagem da página assinada pela banca com o comando abaixo:
+%
+% \begin{folhadeaprovacao}
+% \includepdf{folhadeaprovacao_final.pdf}
+% \end{folhadeaprovacao}
+%
+\begin{folhadeaprovacao}
+  \begin{center}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries FOLHA DE APROVAÇÃO
+      \par
+        \vspace*{1.5cm}
+        {\normalfont\ABNTEXchapterfontsize\MakeUppercase\imprimirautor}
+        \vspace*{1.5cm}
+        \par
+        {\normalfont\ABNTEXchapterfontsize\MakeUppercase\imprimirtitulo}
+    \end{center}
+    \vspace*{\fill}
+    
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+        \imprimirpreambulo
+    \end{minipage}%
+    \vspace*{\fill}
+   \end{center}
+
+   \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+   \assinatura{\textbf{\imprimirconvidadoum} \\ Convidado 1}
+   \assinatura{\textbf{\imprimirconvidadodois} \\ Convidado 2}
+   %\assinatura{\textbf{Professor} \\ Convidado 3}
+   %\assinatura{\textbf{Professor} \\ Convidado 4}
+      
+   \vspace{3cm}
+  \begin{center}
+   \imprimirlocal, 22 de Janeiro de 1999.
+  \end{center}
+  
+  \pagebreak
+\end{folhadeaprovacao}
+% ---
+
+% ---
+% NOTA DA ABNT NBR 15287:2011, p. 4:
+%  ``Se exigido pela entidade, apresentar os dados curriculares do autor em
+%     folha ou página distinta após a folha de rosto.''
+% ---
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[ABNT] Associação Brasileira de Normas Técnicas
+  \item[abnTeX] ABsurdas Normas para TeX
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\section[Introdução]{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+
+% ----------------------------------------------------------
+% Capitulo de textual  
+% ----------------------------------------------------------
+\section{Contextualização e Análise Competitiva}
+
+\subsection{Criptomoedas}
+
+\subsubsection{Definição}
+
+A cryptocurrency system is a peer-to-peer system where the control over the currency is defined by publicly known mathematical properties and not by a centralized trusted authority.
+
+\cite{Weber2012}
+
+Addresses in cryptocurrencies are representations of public keys. there is no explicit record of the account balances, rather there is a list of all unspent in-coming transactions.
+\cite{Weber2012}
+
+Blockchain (também conhecido como “o protocolo da confiança”) é um conceito que visa a descentralização como medida de segurança. São bases de registros e dados distribuídos e compartilhados que possuem a função de criar um índice global para todas as transações que ocorrem em uma determinada rede. Funciona.
+
+\cite{LChicarino}
+
+\subsubsection{Litecoin}
+
+Other cryptocurrencies like Litecoin or Monero have puzzles that use functions which require a significant amount of memory. Litecoin for example uses scrypt. This makes them suitable for running on a CPU or GPU but prevents them
+from being solved lucratively on nowadays FPGAs and ASICs.
+
+\cite{Weber2012}
+
+\subsubsection{Ether}
+
+Ethereum, é o framework mais conhecido e utilizado para contratos inteligentes. Ethereum é uma máquina virtual descentralizada, que executa programas chamados con-tratos a pedido dos usuários. Contratos são escritos em uma linguagem Turing-completa bytecode, chamado EVM bytecode [Wood, 2014]. Umcontrato é um conjunto de funções, cada uma definida por uma sequencia de instruções bytecode. Uma característica notá-vel dos contratos é que eles podem transferir éter (uma criptomoeda similar ao Bitcoin) para/de usuários e para outros contratos.
+
+\cite{Dlamini2017}
+
+A rede Ethereum atualmente usa um algoritmo de consenso PoW, chamado Ethash, criado especificamente para Ethereum. Foi construído para dificultar seu processamento por meio de hardwares específicos, como o chips ASICs. Está pre-vista a alteração do mecanismo de consenso da rede Ethereum até o final do ano de 2017, será utilizado o PoS.
+
+\cite{Dlamini2017}
+
+\subsubsection{Mineração}
+
+The only way to append a block at the end of the block chain is by solving a cryptographic puzzle. The solving process of these cryptographic puzzle is called
+mining.
+
+\cite{Weber2012}
+
+A cipher is the algorithm used for the encryption and/or decryption of information. In common language, ‘cipher’ is also used to refer to an encryption message, also known as ‘code’. Confirmation means that the blockchain transaction has been verified by the network.
+
+\cite{Arsov}
+
+Different cryptocurrencies uses different hash-proof based algorithms to solve transaction blocks which require high mathematical lifting, hence GPU‘s were seen as a credible alternative to the CPU mining.
+
+\cite{Krishnan2015}
+
+A mineração é o processo responsável por atualizar a Blockchain, pelo qual alguns nós especiais, chamados de mineradores, incluem as transações em um bloco e geram um ca-beçalho válido para essas transações.
+
+\cite{LChicarino}
+
+\subsubsection{Pools de mineração}
+
+Because solving a block for a single miner is very unlikely, miners have formed pools. Mining pools encapsulate multiple machines working on the problem and split the revenue in the case of success. Some mining pools are open to the public whereas others are commercial assemblies.
+
+\cite{Weber2012}
+
+\subsubsection{Rigs de mineração}
+
+A mining rig is a computer system used for mining bitcoins. The rig might be a dedicated miner where it was procured, built and operated specifically for mining or it could otherwise be a computer that fills other needs, such as performing as a gaming system, and is used to mine only on a part-time basis.
+
+\cite{BitcoinWiki2015}
+
+\subsubsection{Criptomoedas No Brasil}
+
+Atualmente, o Brasil apresenta um número de volume de transações de BTC
+irrelevante comparado ao cenário internacional, conforme vemos na figura Esta condição pode causar distorções no mercado doméstico comparado ao global, iremos explorar esse assunto nos próximos capítulos.
+
+Os objetivos do uso de criptomoedas no Brasil podem ser os seguintes:
+
+Atualmente o custo e velocidade de transação de dinheiro para outros países são muito elevados. Ao utilizar a criptomoeda para este tipo de transação é possível transferir o valor em apenas 10 minutos, enquanto o método convencional pode demorar 2 dias úteis ou mais. Além disso, ao utilizar o BTC são pagas apenas as taxas cobradas pelo depósito, compra, venda e retirada. Evitando assim, as tarifas e spreads cobrados nas operações cambiais pelas instituições financeiras.
+
+\cite{Prado2017}
+
+Acredito que investimento seja responsável pela maioria expressiva do volume transacionado, sendo assim, o principal objetivo dos compradores do Bitcoin no Brasil.
+
+\cite{Prado2017}
+
+% \subsubsection{Desvantagens}
+
+% Additionally, if something goes wrong there is nobody to blame or sue. Another drawback is that because of its high degree of privacy it can be a good tool to hide any kind of illegal financing, like bribery or funds for terrorism.
+%
+
+\cite{Weber2012}
+
+
+% Como o BTC não é regulado pela legislação brasileira não existe um procedimento a ser seguido. Esta falta de regulamentação torna impossível afirmar se a operação é legal ou ilegal, gerando insegurança jurídica.
+%
+
+\cite{Prado2017}
+
+\subsubsection{Corretoras de Bitcoin}
+
+Atualmente existem 7 corretoras relevantes no Brasil, sendo a FoxBit a maior.
+FoxBit Mercado Bitcoin BitcoinToYou Local Bitcoins NegocieCoins FlowBTC ArenaBitcoin
+
+\cite{Prado2017}
+
+\subsection{Sistemas Operacionais Linux e suas Distribuições}
+
+\subsubsection{Vantagens do Linux}
+
+A diversidade de aplicações disponíveis é uma dessas vantagens. O facto de presentemente existirem mais de 100 000 aplicações de software livre, faz com que a probabilidade de encontrar uma que satisfaça as necessidades individuais do utilizador seja elevada.
+
+O seu custo resume-se, muitas vezes, ao custo do meio que serve para a sua distribuição (custos de internet para o seu descarregamento, do CD ou DVD em que é gravado, ou da pen drive onde é distribuído).
+
+Ligados à Internet, os sistemas baseados em Linux podem descarregar automaticamente actualizações, sendo este processo efectuado de forma transparente e com pouca ou nenhuma necessidade de intervenção dos utilizadores.
+
+\cite{Nunes2009}
+
+\subsubsection{Meios de Instalação do Linux}
+
+Nos últimos anos, outras formas de utilizar o Linux foram sendo disponibilizadas, visando torná-lo mais acessível ao grande público. Uma destas foi a capacidade de executar a distribuição no formato Live, conforme referimos anteriormente, a qual consiste no arranque deste sistema operativo através da pen usb ou do CD / DVD, sem efectuar qualquer alteração no disco rígido do utilizador. Assim se pode experimentar sem risco de perda de dados ou possuir um sistema portátil, que pode ser utilizado em qualquer computador que permita o arranque do sistema através de unidade usb, sem deixar dados de utilização (garantindo a confidencialidade) mas podendo transportar os seus ficheiro pessoais e utilizá-los por essa via.
+
+\cite{Nunes2009}
+
+\subsubsection{Distribuições Linux}
+
+\subsubsubsection{Debian}
+Debian is a free operating system (OS) for your computer. An operating system is the set of basic programs and utilities that make your computer run. 
+
+All packages that are included in the official Debian distribution are free according to the Debian Free Software Guidelines. This assures free use and redistribution of the packages and their complete source code. The official Debian distribution is what is contained in the main section of the Debian archive.
+
+The "stable" distribution contains the latest officially released distribution of Debian. 
+
+Debian has (from release to the end of security updates) a total lifetime of about 3 years
+
+Debian provides more than a pure OS: it comes with over 51000 packages, precompiled software bundled up in a nice format for easy installation on your machine
+
+\cite{Debian2018}
+
+dpkg, apt, aptitude, synaptic and tasksel are the package managers.
+
+\cite{Debian2016}
+
+\subsubsubsection{Arch}
+
+Arch Linux is an independently developed, x86-64 general-purpose GNU/Linux distribution that strives to provide the latest stable versions of most software by following a rolling-release model. The default installation is a minimal base system, configured by the user to only add what is purposely required.
+
+Arch Linux is a general-purpose distribution. Upon installation, only a command-line environment is provided: rather than tearing out unneeded and unwanted packages, the user is offered the ability to build a custom system by choosing among thousands of high-quality packages provided in the official repositories for the x86-64 architecture.
+
+Inspired by the elegant simplicity of Slackware, BSD, PLD Linux and CRUX, and yet disappointed with their lack of package management at the time,
+
+\cite{ArchWiki2018a}
+
+The pacman package manager is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use build system. The goal of pacman is to make it possible to easily manage packages, whether they are from the official repositories or the user's own builds.
+
+\cite{ArchWiki2018b}
+
+Before upgrading, users are expected to visit the Arch Linux home page to check the latest news, or alternatively subscribe to the RSS feed, arch-announce mailing list, or follow @archlinux on Twitter.
+
+\cite{ArchWiki2018c}
+
+The Arch Build System is a ports-like system for building and packaging software from source code.
+
+\cite{ArchWiki2018d}
+
+\subsubsubsection{Gentoo}
+
+Gentoo is a free operating system based on either Linux or FreeBSD that can be automatically optimized and customized for just about any application or need.
+
+\cite{GentooWiki2018}
+
+Portage is the official package manager and distribution system for Gentoo. It functions as the heart of Gentoo-based operating systems. Portage includes many commands for repository and package management, the primary of which is the emerge command.
+
+\cite{GentooFundation2018}
+% TODO: Outras distribuições
+
+Gentoo é rolling release.
+Pacotes são compilados na hora de instalação.
+
+\subsubsubsection{Fedora}
+
+The Fedora Project is a community of people working together to build a free and open source software platform and to collaborate on and share user-focused solutions built on that platform. Or, in plain English, we make an operating system and we make it easy for you do useful stuff with it.
+
+\cite{FedoraProject2018}
+
+O Fedora tem 3 versões. Workstation, Server e Atomic. Todas com interfaces gráficas. É uma distribuição de propósito geral que visa simplificar a vida dos usuários.
+
+Each new Fedora release receives updates from the Fedora community for two subsequent releases, plus one month -- on average, about thirteen months. We do everything we can to make sure that the final products released to the general public are stable and reliable. Fedora has proven that it can be a stable, reliable, and secure platform, as shown by its popularity and broad usage. Additionally, our well-managed packaging and review process adds an extra layer of safety not found in some other distributions.
+
+\cite{FedoraProject2018a}
+
+Fedora is a distribution that uses a package management system. This system is based on rpm , the RPM Package Manager, with several higher level tools built on top of it, most notably PackageKit (default gui) and yum (command line tool). As of Fedora 22, yum has been replaced by dnf. The Gnome Package Manager is another GUI package manager. 
+
+\cite{FedoraProject2018b}
+
+\subsubsubsection{Ubuntu}
+
+O Ubuntu tem várias variações, como o ubuntu server, Linux Mint. Etc.
+
+Ubuntu is an open source software operating system that runs from the desktop, to the cloud, to all your internet connected things.
+
+\cite{UbuntuFundation2018}
+
+We produce a new Ubuntu Desktop and Ubuntu Server release every six months. That means you'll always have the latest and greatest applications that the open source world has to offer. Ubuntu is designed with security in mind. You get free security updates for at least 9 months on the desktop and server.
+
+\cite{UbuntuWiki2017}
+
+Distribuição para iniciantes no Linux, fácil de instalar, com muitos pacotes já instalados. Com instaladores gráficos.
+
+Several tools are available for interacting with Ubuntu's package management system, from simple command-line utilities which may be easily automated by system administrators, to a simple graphical interface which is easy to use by those new to Ubuntu. dpkg, apt, aptitude.
+
+\cite{UbuntuWiki2018}
+
+\subsubsection{Criação/Costumização de distribuições Linux}
+
+A criação de distribuições Linux pode fazer-se, grosso modo, através de dois processos distintos: criação de raiz ou criação a partir de outra distribuição. A criação de raiz faz-se através da manipulação do código-fonte, ou seja, dos ficheiros que contêm o conjunto de instruções que permitem interagir com o computador, através de operações previamente descritas nesse código. A essa manipulação chama-se compilação, a qual é efectuada com o intuito de transformar o código-fonte em código objecto, o qual é facilmente interpretado pelo processador do computador.
+
+A criação de raiz de uma distribuição Linux implica geralmente um grupo de trabalho composto por técnicos altamente especializados em engenharia de software e recursos em termos de dispositivos informáticos consideráveis, tanto para a criação como para a despistagem de erros, pelo que a maioria das distribuições existentes, pelo facto de serem projectos individuais ou envolverem poucos elementos, pertence ao grupo das distribuições criadas a partir de outras.
+
+Para criar uma distribuição a partir de outra, recorre-se a ferramentas específicas, que permitem adequar a nova distribuição aos requisitos em termos de software que é integrado, de adequação linguística, de requisitos de hardware ou ainda do meio em que esta vai ser distribuída.
+
+\cite{Nunes2009}
+
+\subsubsection{Detecção de Placas Gráficas}
+
+\subsubsubsection{LSHW}
+
+lshw is a small tool to provide detailed information on the hardware configuration of the machine. It can report exact memory configuration, firmware version, mainboard configuration, CPU version and speed, cache configuration, bus speed, etc. on DMI-capable x86 or EFI (IA-64) systems and on some ARM and PowerPC machines (PowerMac G4 is known to work).
+
+\cite{Vincent2018}
+
+\subsubsection{Drivers de Placas Gráficas}
+
+As duas placas gráficas mais utilizadas para criar mining rigs são da marca NVidia e AMD.
+
+\cite{CoinMiningRigs2018}
+
+\subsubsubsection{NVidia}
+
+The NVIDIA kernel mode driver must be running and connected to a target GPU device before any user interactions with that device can take place. The driver behavior differs depending on the OS. Generally, if the kernel mode driver is not already running or connected to a target GPU, the invocation of any program that attempts to interact with that GPU will transparently cause the driver to load and/or initialize the GPU. When all GPU clients terminate the driver will then deinitialize the GPU.
+
+\cite{NVidia2017}
+
+To start the persistence daemon at boot, enable the nvidia-persistenced.service.
+
+\cite{ArchWiki2018}
+
+\subsubsubsection{AMD}
+
+amdgpu is the open source graphics driver for the latest AMD Radeon graphics cards.
+
+The amdgpu kernel module should load fine automatically on system boot. 
+
+\cite{ArchWiki2018e}
+
+\subsection{Características relevantes em distribuições Linux para mineração de criptomoedas}
+
+\subsection{Quadro comparativo entre distribuições Linux para a proposta do trabalho}
+
+% Explicar a conclusão
+% "Ler o quadro"
+
+% ----------------------------------------------------------
+% Capitulo com exemplos de comandos inseridos de arquivo externo
+% ----------------------------------------------------------
+
+% ---
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ---
+\phantompart
+
+% ---
+% Conclusão
+% ---
+% \chapter*[Considerações finais]{Considerações finais}
+% \addcontentsline{toc}{chapter}{Considerações finais}
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+%\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas (nome do arquivo de referencias, sem o ".bib"
+% ----------------------------------------------------------
+\bibliography{referencias}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+% \begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+% \partapendices
+
+% ----------------------------------------------------------
+% \chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+% \lipsum[50]
+
+% ----------------------------------------------------------
+% \chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+% ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% ----------------------------------------------------------
+% \lipsum[55-57]
+
+% \end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+% \begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+% \partanexos
+
+% ---
+% \chapter{Morbi ultrices rutrum lorem.}
+% ---
+% \lipsum[30]
+
+% ---
+% \chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+% parturient montes nascetur ridiculus mus}
+% ---
+
+% \lipsum[31]
+
+% ---
+% \chapter{Fusce facilisis lacinia dui}
+% ---
+
+% \lipsum[32]
+
+% \end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+
+% \phantompart
+
+% \printindex
+
+
+\end{document}
