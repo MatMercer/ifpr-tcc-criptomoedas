@@ -313,8 +313,8 @@ As Criptomoedas são um sistema descentralizado e independente de uma
 instituição financeira. Sua facilidade de uso tornou as taxas de
 transações cambiais menores, além de aumentar a velocidade com que
 essas transações eram efetivadas. Isto chamou muito a atenção de
-investidores, o que levou a uma difusão desta tecnologia na
-nossa sociedade \cite{Nakamoto2008, Prado2017}.
+investidores, o que levou a uma difusão desta tecnologia na nossa
+sociedade \cite{Nakamoto2008, Prado2017}.
 
 \subsubsection{Definição}
 
@@ -323,15 +323,9 @@ moeda é feito por propriedades matemáticas e não por uma instituição
 centralizada. Cada usuário é identificado por uma representação de sua
 chave pública, também referenciada como endereço da carteira
 \cite{Weber2012}. Para que um usuário faça uma transação, é necessário
-que ele: (a) saiba o balanço de sua carteira, que é calculado por
-meio do \emph{Blockchain}; (b) tenha o endereço da carteira de envio; e (c) tenha a chave privada de sua carteira.
-
-\begin{itemize}
-    \item Ele saiba o balanço de sua carteira, que é calculado por
-        meio do \emph{Blockchain}.
-    \item Ele tenha o endereço da carteira de envio.
-    \item Ele tenha a chave privada de sua carteira.
-\end{itemize}
+que ele: (a) saiba o balanço de sua carteira, que é calculado por meio
+do \emph{Blockchain}; (b) tenha o endereço da carteira de envio; e (c)
+tenha a chave privada de sua carteira.
 
 Em vez de existir um balanço em uma conta, existe uma lista de
 transações feitas desde o início do sistema, chamada de
@@ -345,31 +339,68 @@ validação seguindo as sua próprias regras, sujeito a erros.
 
 \subsubsection{Mineração}
 
-Como dito anteriormente, na seção~\ref{def:blockchain}, o
+Como dito anteriormente, na Seção~\ref{def:blockchain}, o
 \emph{Blockchain} serve para validar uma transação. Somente existe uma
-maneira de colocar uma transação no \emph{Blockchain}; resolvendo um
-``quebra cabeças'' criptográfico \cite{Weber2012}. Onde uma cifra deve
-ser quebrada para que a transação entre duas contas seja válida. Uma
-cifra, na linguagem comum, é uma mensagem criptografada, confirmar uma
-transação nada mais é que descriptografar esta mensagem utilizando
-força bruta \cite{Arsov}.
+maneira de confirmar uma transação no \emph{Blockchain}: resolvendo um
+``quebra cabeças'' criptográfico \cite{Weber2012}. Nessa resolução
+criptográfica, um hash SHA-256 de um dado deve ser menor que um número
+específico \cite{Dev2014}. Um hash, na linguagem comum, é um valor
+único para um determinado dado.  Confirmar uma transação nada mais é
+que descobrir este hash se utilizando da força bruta \cite{Arsov}.
 
-% TODO: Isso foi uma cópia?
 A mineração serve para atualizar o \emph{Blockchain}, pelo qual nós
 especiais, chamados de mineradores se encarregam em trabalhar de
 maneira distribuída para fazer a validação de um conjunto de
-transações, chamado de bloco. Toda vez que um bloco é validado com um
-cabeçalho para as transações, quem o valida recebe uma recompensa
+transações, chamado de bloco. Toda vez que um cabeçalho válido é
+gerado para o bloco, quem o valida recebe uma recompensa
 \cite{LChicarino}. O incentivo na mineração é esta recompensa.
 
-Criptomoedas utilizam diferentes algoritmos para fazer as validações,
-logo, como veremos adiante, necessitam de \emph{hardwares} específicos
-para que a mineração seja feita.
+A recompensa também é definida como ``prova de trabalho''. Todos os
+cabeçalhos de blocos novos são baseados no de blocos anteriores.
+Portanto, para que o sistema seja atacado e corrompido, ou seja, para
+que uma transação seja mudada manualmente, é necessário que o atacante
+recalcule todos os blocos que foram gerados a partir do bloco que ele
+quer modificar. Isto somente é possível se pelo menos $51\%$ do poder
+computacional da rede inteira estiver nas mãos de quem a ataca
+\cite{Nakamoto2008, Dev2014}.
+
+A prova de trabalho também é um mecanismo de segurança. Diferentes
+Criptomoedas utilizam diversos algoritmos para fazer as validações.
+Logo, tornam-se necessários \emph{hardwares} específicos para que a
+mineração seja feita. No Capítulo XXX apresentam-se os hardwares e
+algoritmos mais comumente utilizados para este fim.
+% TODO: Referência cruzada aqui
+
 % TODO: Discutir sobre GPU ser melhor que CPU, etc.
 
+\subsubsection{Rigs de Mineração}
+
+Um rig de mineração é um sistema computacional que tem como
+responsabilidade a mineração de uma Criptomoeda. Um computador com
+hardwares gráficos de alto desempenho pode virar um rig de mineração
+em tempo parcial. Também existe a possibilidade de várias placas
+gráficas trabalharem em conjunto em um mesmo sistema. A
+Figura~\ref{fig:rig_mineracao} é um exemplo de um rig de mineração com
+múltiplas placas gráficas \cite{BitcoinWiki2015}.
+
+\begin{figure}[!htbp]
+    \caption{\label{fig:rig_mineracao}Um rig de mineração com 13 GPUs
+    NVidia 1060}
+    \begin{center}
+        \includegraphics[width=.3\linewidth]{rig_mineracao.png}
+    \end{center}
+    \legend{Fonte: } % TODO: Como citar a fonte desta imagem? https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/
+\end{figure}
+
+\pagebreak
+
+A medida utilizada para apresentar o desempenho de um rig de mineração
+é ``hashes por segundo'', representado por $h/s$. \emph{Hardware} e
+Criptomoeda são fatores que variam a quantidade de hashes por segundo.
 % ----------------------------------------------------------
-% Referências bibliográficas (nome do arquivo de referencias, sem o ".bib"
+% Referências bibliográficas (nome do arquivo de referencias, sem o
+% ".bib"
 % ----------------------------------------------------------
-\bibliography{referencias}
+\pagebreak \bibliography{referencias}
 
 \end{document}
