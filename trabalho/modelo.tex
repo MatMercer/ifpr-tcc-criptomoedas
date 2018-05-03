@@ -28,25 +28,25 @@
 % ------------------------------------------------------------------------
 
 \documentclass[
-	% -- opções da classe memoir --
-	article,			% indica que é um artigo acadêmico
-	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	oneside,			% para impressão em recto. Oposto a twoside
-	%twoside,			% para impressão em recto e verso. Oposto a oneside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	subsubsubsection=TITLE, % títulos de subsubsubseções em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	%french,			% idioma adicional para hifenização
-	%spanish,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
-	]{abntex2}
+% -- opções da classe memoir --
+article,			% indica que é um artigo acadêmico
+12pt,				% tamanho da fonte
+openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+oneside,			% para impressão em recto. Oposto a twoside
+%twoside,			% para impressão em recto e verso. Oposto a oneside
+a4paper,			% tamanho do papel. 
+% -- opções da classe abntex2 --
+chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+subsubsubsection=TITLE, % títulos de subsubsubseções em letras maiúsculas
+% -- opções do pacote babel --
+english,			% idioma adicional para hifenização
+%french,			% idioma adicional para hifenização
+%spanish,			% idioma adicional para hifenização
+brazil,				% o último idioma é o principal do documento
+]{abntex2}
 
 % ---
 % PACOTES
@@ -89,13 +89,13 @@
 \renewcommand{\backref}{}
 % Define os textos da citação
 \renewcommand*{\backrefalt}[4]{%
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
+    \ifcase #1 %
+        Nenhuma citação no texto.%
+        \or
+        Citado na página #2.%
+    \else
+        Citado #1 vezes nas páginas #2.%
+\fi}%
 % ---
 
 % ---
@@ -117,7 +117,7 @@
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
 \preambulo{Trabalho de Conclusão de Curso apresentado ao \imprimircurso do Instituto 
-Federal do Paraná \@\textendash\@ Campus Londrina, como 
+    Federal do Paraná \@\textendash\@ Campus Londrina, como 
 requisito parcial de avaliação.}
 % ---
 
@@ -130,18 +130,18 @@ requisito parcial de avaliação.}
 % informações do PDF
 \makeatletter
 \hypersetup{%
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
-		colorlinks=false,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
+    %pagebackref=true,
+    pdftitle={\@title}, 
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfcreator={LaTeX with abnTeX2},
+    pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+    colorlinks=false,       		% false: boxed links; true: colored links
+    linkcolor=blue,          	% color of internal links
+    citecolor=blue,        		% color of links to bibliography
+    filecolor=magenta,      		% color of file links
+    urlcolor=blue,
+    bookmarksdepth=4
 }
 \makeatother
 % --- 
@@ -211,37 +211,37 @@ requisito parcial de avaliação.}
 % \end{folhadeaprovacao}
 %
 \begin{folhadeaprovacao}
-  \begin{center}
     \begin{center}
-      \ABNTEXchapterfont\bfseries FOLHA DE APROVAÇÃO
-      \par
-        \vspace*{1.5cm}
-        {\normalfont\ABNTEXchapterfontsize\MakeUppercase\imprimirautor}
-        \vspace*{1.5cm}
-        \par
-        {\normalfont\ABNTEXchapterfontsize\MakeUppercase\imprimirtitulo}
-    \end{center}
-    \vspace*{\fill}
-    
-    \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
-        \imprimirpreambulo
-    \end{minipage}%
-    \vspace*{\fill}
-   \end{center}
+        \begin{center}
+            \ABNTEXchapterfont\bfseries FOLHA DE APROVAÇÃO
+            \par
+            \vspace*{1.5cm}
+            {\normalfont\ABNTEXchapterfontsize\MakeUppercase\imprimirautor}
+            \vspace*{1.5cm}
+            \par
+            {\normalfont\ABNTEXchapterfontsize\MakeUppercase\imprimirtitulo}
+        \end{center}
+        \vspace*{\fill}
 
-   \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
-   \assinatura{\textbf{\imprimirconvidadoum} \\ Convidado 1}
-   \assinatura{\textbf{\imprimirconvidadodois} \\ Convidado 2}
-   %\assinatura{\textbf{Professor} \\ Convidado 3}
-   %\assinatura{\textbf{Professor} \\ Convidado 4}
-      
-   \vspace{3cm}
-  \begin{center}
-   \imprimirlocal, 22 de Janeiro de 1999.
-  \end{center}
-  
-  \pagebreak
+        \hspace{.45\textwidth}
+        \begin{minipage}{.5\textwidth}
+            \imprimirpreambulo
+        \end{minipage}%
+        \vspace*{\fill}
+    \end{center}
+
+    \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+    \assinatura{\textbf{\imprimirconvidadoum} \\ Convidado 1}
+    \assinatura{\textbf{\imprimirconvidadodois} \\ Convidado 2}
+    %\assinatura{\textbf{Professor} \\ Convidado 3}
+    %\assinatura{\textbf{Professor} \\ Convidado 4}
+
+    \vspace{3cm}
+    \begin{center}
+        \imprimirlocal, 22 de Janeiro de 1999.
+    \end{center}
+
+    \pagebreak
 \end{folhadeaprovacao}
 % ---
 
@@ -271,8 +271,8 @@ requisito parcial de avaliação.}
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[ABNT] Associação Brasileira de Normas Técnicas
-  \item[abnTeX] ABsurdas Normas para TeX
+\item[ABNT] Associação Brasileira de Normas Técnicas
+\item[abnTeX] ABsurdas Normas para TeX
 \end{siglas}
 % ---
 
@@ -280,10 +280,10 @@ requisito parcial de avaliação.}
 % inserir lista de símbolos
 % ---
 \begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
+\item[$ \Gamma $] Letra grega Gama
+\item[$ \Lambda $] Lambda
+\item[$ \zeta $] Letra grega minúscula zeta
+\item[$ \in $] Pertence
 \end{simbolos}
 % ---
 
@@ -330,16 +330,71 @@ moeda viável para ser minerada em uma CPU de um computador doméstico
 
 Logo, existem outras alternativas de Criptomoedas que podem ser
 mineradas em uma GPU ou CPU\@. Essa detecção atualmente não é feita
-automaticamente por uma distribuição Linux. A distribuição Ethos é uma
-alternativa comercial para minerar Criptomoedas, porém a configuração
-e instalação de drivers deve ser feita manualmente \cite{EthOS2018}. A
-criação de uma distribuição Linux genérica especifica para fazer esta
-detecção facilitaria muito o trabalho de alguém que precisa configurar
-o software em um hardware de alto desempenho.
+automaticamente por uma distribuição Linux. 
 
 \subsection{Problema}
 
+% TODO: Citação do distrorank
+Fazer a configuração para uma distribuição Linux é um trabalho
+repetitivo e que demanda tempo. Atualmente, as distribuições mais
+populares automatizam o processo de instalação, configuração e
+atualização. Porém, esta configuração é feita para um objetivo de uso
+genérico, não para a mineração de Criptomoedas.
+
+Para que um Node comece a minerar uma Criptomoeda, existe a
+necessidade de configurar os seguintes componentes: (a) Os drivers de
+vídeo; (b) O software para a mineração; (c) Configuração e inserção de
+dados no software de mineração e (e) a criação ou configuração de uma
+carteira. 
+
+A distribuição Ethos é uma alternativa comercial para minerar
+Criptomoedas, porém a configuração e instalação de drivers deve ser
+feita manualmente \cite{EthOS2018}. A criação de uma distribuição
+Linux genérica especifica para fazer esta detecção facilitaria muito o
+trabalho de alguém que precisa configurar o software em um hardware de
+alto desempenho.
+
+% TODO: Referência bitcoin só ser lucrativo em grandes data centers
+% TODO: Referência algoritmo Etash
+Não é todo hardware que pode minerar uma Criptomoeda de maneira
+lucrativa. O Bitcoin com o passar dos anos virou uma Criptomoeda que
+só é possível ser minerada lucrativamente em grandes data centers com
+hardwares específicos para o seu algoritmo. O Etash, utiliza um
+algoritmo específico que somente permite a mineração lucrativa em
+GPUs. Fazer esta detecção entre capacidade de hardware e Criptomoeda
+não é um requisito que as distribuições atuais conseguem suprir.
+% TODO: Referências???
+
 \subsection{Objetivos}
+
+\subsubsection{Geral}
+
+Personalizar uma distribuição Linux capaz de automatizar a
+configuração do hardware do equipamento para otimizar o tempo de
+instalação do usuário.
+
+\subsubsection{Específicos}
+
+\begin{itemize} 
+
+    \item Pesquisar drivers genéricos que funcionam em
+        hardwares de alto desempenho;
+
+    \item Personalizar uma distribuição Linux para a automatização da
+        instalação dos drivers genéricos;
+
+    \item Pesquisar diferentes Criptomoedas e suas vantagens e
+        desvantagens em diferentes hardwares;
+
+    \item Encontrar as melhores alternativas de softwares em termos de
+        praticidade e tempo;
+
+    \item Desenvolver a distribuição;
+
+    \item Fazer um comparativo da velocidade de instalação entre a
+distribuição e uma instalação manual.
+
+\end{itemize}
 
 \subsection{Método}
 
@@ -429,7 +484,7 @@ múltiplas placas gráficas \cite{BitcoinWiki2015}.
     \begin{center}
         \includegraphics[width=.3\linewidth]{rig_mineracao.png}
     \end{center}
-    \legend{Fonte: https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}
+    \legend{Fonte: \url{https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}}
 \end{figure}
 
 \pagebreak
