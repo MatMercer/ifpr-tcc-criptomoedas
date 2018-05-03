@@ -1,0 +1,3 @@
+[submodule "latex/abntex2ifpr"]
+	path = latex/abntex2ifpr
+	url = https://github.com/MatMercer/abntex2ifpr
