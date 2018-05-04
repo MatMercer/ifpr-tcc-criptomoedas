@@ -331,15 +331,15 @@ moeda viável para ser minerada em uma CPU de um computador doméstico
 
 Logo, existem outras alternativas de Criptomoedas que podem ser
 mineradas em uma GPU ou CPU\@. Essa detecção atualmente não é feita
-automaticamente por uma distribuição Linux. 
+automaticamente por uma distribuição Linux. A distribuição Ethos é uma
+alternativa comercial para minerar Criptomoedas, porém a configuração
+e instalação de drivers deve ser feita manualmente \cite{EthOS2018}. A
+criação de uma distribuição Linux genérica especifica para fazer esta
+detecção facilitaria muito o trabalho de alguém que precisa configurar
+o software em um hardware de alto desempenho.
 
 \subsection{Problema}
 
-% TODO: Reescrever esta seção
-% Dificuldade de instalar o algoritmo correto para N moeda.
-% Dificuldade para fazer o reconhecimento de placas gráficas.
-% Falta de uma distribuição específica para isso. Suporte para a
-% distribuição.
 % TODO: Citação do distrorank
 Fazer a configuração para uma distribuição Linux é um trabalho
 repetitivo e que demanda tempo. Atualmente, as distribuições mais
@@ -347,18 +347,15 @@ populares automatizam o processo de instalação, configuração e
 atualização. Porém, esta configuração é feita para um objetivo de uso
 genérico, não para a mineração de Criptomoedas.
 
-Para que um Node comece a minerar uma Criptomoeda, existe a
-necessidade de configurar os seguintes componentes: (a) Os drivers de
-vídeo; (b) O software para a mineração; (c) Configuração e inserção de
-dados no software de mineração e (e) a criação ou configuração de uma
-carteira. 
+Para que um usuário configure a mineração de uma Criptomoeda, ele deve
+levar os seguintes fatores em conta: (a) Os drivers de vídeo; (b) O
+software para a mineração; (c) Configuração e inserção de dados no
+software de mineração e (e) a criação ou configuração de uma carteira. 
 
-A distribuição Ethos é uma alternativa comercial para minerar
-Criptomoedas, porém a configuração e instalação de drivers deve ser
-feita manualmente \cite{EthOS2018}. A criação de uma distribuição
-Linux genérica especifica para fazer esta detecção facilitaria muito o
-trabalho de alguém que precisa configurar o software em um hardware de
-alto desempenho.
+A configuração de drivers de vídeo é um fator de extrema importância
+para Criptomoedas que utilizam uma GPU para fazer a mineração. Um erro
+nesta etapa acaba pode tornar a mineração não lucrativa, prejudicando
+o objetivo do usuário.
 
 % TODO: Referência bitcoin só ser lucrativo em grandes data centers
 % TODO: Referência algoritmo Etash
@@ -368,8 +365,17 @@ só é possível ser minerada lucrativamente em grandes data centers com
 hardwares específicos para o seu algoritmo. O Etash, utiliza um
 algoritmo específico que somente permite a mineração lucrativa em
 GPUs. Fazer esta detecção entre capacidade de hardware e Criptomoeda
-não é um requisito que as distribuições atuais conseguem suprir.
+não é um requisito que as distribuições atuais suprem.
 % TODO: Referências???
+
+Usuários muitas vezes não tem conhecimento suficiente para discernir
+as diferenças entre Criptomoedas e Hardwares. A sugestão da
+Criptomoeda no momento de instalação é importante para tornar a
+mineração mais lucrativa. Para melhoria da performance, elementos que
+não são cruciais para o funcionamento do sistema devem ser
+desativados. Por exemplo, a interface gráfica é algo que não é
+necessária para a mineração, logo, deve ser desativada sempre que
+possível.
 
 \subsection{Objetivos}
 
