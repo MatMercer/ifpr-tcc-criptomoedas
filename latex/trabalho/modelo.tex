@@ -63,6 +63,10 @@ brazil,				% o último idioma é o principal do documento
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 %\usepackage[none]{hyphenat} 			% Desativa ifenização
+\usepackage{booktabs}
+\usepackage[svgnames,table]{xcolor}
+\usepackage[tableposition=above]{caption}
+\usepackage{tabularx}
 % ---
 
 % ---
@@ -361,8 +365,8 @@ o objetivo do usuário.
 % TODO: Referência algoritmo Etash
 Não é todo hardware que pode minerar uma Criptomoeda de maneira
 lucrativa. O Bitcoin com o passar dos anos virou uma Criptomoeda que
-só é possível ser minerada lucrativamente em grandes data centers com
-hardwares específicos para o seu algoritmo. O Etash, utiliza um
+só é possível de ser minerada lucrativamente em grandes data centers
+com hardwares específicos para o seu algoritmo. O Etash utiliza um
 algoritmo específico que somente permite a mineração lucrativa em
 GPUs. Fazer esta detecção entre capacidade de hardware e Criptomoeda
 não é um requisito que as distribuições atuais suprem.
@@ -406,6 +410,35 @@ distribuição e uma instalação manual.
 \end{itemize}
 
 \subsection{Método}
+
+Para a revisão de literatura, foram utilizadas as seguintes bases
+científicas: Arch Linux Wiki, IEEE Xplore Digital Library e Google
+Acadêmico. Os descritores utilizados são referentes às áreas de
+pesquisa deste trabalho, que posteriormente foram combinados para o
+cruzamento dos assuntos. A Tabela~\ref{table:descritores} mostra a
+lista de descritores.
+
+\begin{table}
+    \centering
+    \caption{\label{table:descritores}Descritores utilizados}
+    \makebox[\textwidth]{%
+        \begin{tabularx}{\textwidth}{@{} l >{\RaggedRight}X @{} }
+            \toprule
+            \multicolumn{1}{c}{\bfseries Áreas} &
+            \multicolumn{1}{c}{\bfseries Descritores} \\
+            \midrule
+            Criptomoedas &
+            Mineração; Rigs de mineração; Ethereum; Zcash; Monero;
+            Bitcoin; Blockchain; \\
+
+            Linux &	EthOS\@; Instalação; Gerenciador de Pacotes;
+            Customização; Ferramentas; Softwares; Distribuição \\
+
+            Placas de Vídeo & AMD\@; GeForce; NVidia; Detecção \\
+            \toprule
+        \end{tabularx}
+    }
+\end{table}
 
 \subsection{Estrutura}
 
@@ -499,7 +532,7 @@ múltiplas placas gráficas \cite{BitcoinWiki2015}.
 \pagebreak
 
 A medida utilizada para apresentar o desempenho de um rig de mineração
-é ``hashes por segundo'', representado por $h/s$. \emph{Hardware} e
+é ``hashes por segundo'', representado por $\mathbf{h/s}$. \emph{Hardware} e
 Criptomoeda são fatores que variam a quantidade de hashes por segundo.
 
 \subsubsection{Litecoin}
