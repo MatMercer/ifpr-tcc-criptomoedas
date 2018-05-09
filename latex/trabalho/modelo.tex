@@ -319,36 +319,36 @@ requisito parcial de avaliação.}
 \subsection{Contexto}
 
 Há indícios que as Criptomoedas surgiram com o enfraquecimento do
-dólar como padrão monetário internacional \cite{FAE2014}, diversas
+dólar como padrão monetário internacional \cite{FAE2014}. Diversas
 tecnologias surgiram ao longo do tempo, que revolucionaram como as
 instituições monetárias, sejam elas governamentais ou não, interagem
-com essas moedas sem lastros \cite{Said2017}. 
-% TODO: Trocar a referência para gazeta do povo
+com as Criptomoedas.
+% TODO: Melhorar o histórico, colocar o ano, quem foi o criador.
 
-Softwares e Hardwares foram criados para gerenciar essas novas
-tecnologias, a mais famosa é o Bitcoin. O principal objetivo do
-Bitcoin é transferir tokens de valor monetário evitando a dependência
-entre uma instituição intermediaria para validar as transações
-\cite{Nakamoto2008}. Essa validação é feita pelo Blockchain, onde
-existe uma lista de transações que necessitam ser, de maneira
-criptografada, validadas \cite{Economist2015}.
+A Criptomoeda mais famosa até o momento é o Bitcoin. O principal
+objetivo do Bitcoin é transferir tokens de valor monetário, evitando a
+dependência entre uma instituição intermediaria para validar as
+transações \cite{Nakamoto2008}. Essa validação é feita pelo
+Blockchain, onde existe uma lista de transações que necessitam ser, de
+maneira criptografada, validadas \cite{Economist2015}.
 
 Quando um bloco de transações é validado, quem validou recebe uma
-quantia determinada de Bitcoin, minerar essa Criptomoeda nada mais é
-que continuar as transações, incentivando novos mineradores. Em 2015,
-foi estimado que mais de cem mil nodes (computadores na rede) estavam
-minerando bitcoin \cite{Coin2015}. O Bitcoin muitas vezes não é uma
-moeda viável para ser minerada em uma CPU de um computador doméstico
-\cite{Bitcoins2018}.
+quantia determinada de Bitcoin. O processo de mineração de
+Criptomoedas nada mais é que continuar as transações, incentivando
+novos mineradores. Em 2015, foi estimado que mais de cem mil nodes
+(computadores na rede) estavam minerando Bitcoins \cite{Coin2015}. O
+Bitcoin não é uma moeda viável para ser minerada em uma CPU de um
+computador doméstico \cite{Bitcoins2018}.
 
 Logo, existem outras alternativas de Criptomoedas que podem ser
 mineradas em uma GPU ou CPU\@. Essa detecção atualmente não é feita
 automaticamente por uma distribuição Linux. A distribuição Ethos é uma
 alternativa comercial para minerar Criptomoedas, porém a configuração
-e instalação de drivers deve ser feita manualmente \cite{EthOS2018}. A
-criação de uma distribuição Linux genérica especifica para fazer esta
-detecção facilitaria muito o trabalho de alguém que precisa configurar
-o software em um hardware de alto desempenho.
+e instalação de drivers devem ser feita manualmente \cite{EthOS2018}.
+A criação de uma distribuição Linux genérica para fazer esta detecção
+facilitaria muito o trabalho de alguém que precisa configurar o
+software em um hardware de alto desempenho.
+% TODO: melhoria da citação do Ethos
 
 \subsection{Problema}
 
@@ -360,16 +360,18 @@ atualização. Porém, esta configuração é feita para um objetivo de uso
 diferente da mineração de Criptomoedas.
 
 Para que um usuário configure a mineração de uma Criptomoeda, ele deve
-levar os seguintes fatores em conta: (a) Os drivers de vídeo; (b) O
-software para a mineração; (c) Configuração e inserção de dados no
-software de mineração e (e) a criação ou configuração de uma carteira. 
+levar os seguintes fatores em consideração (a) os drivers de vídeo;
+(b) o software para a mineração; (c) configuração e inserção de dados
+no software de mineração; e (d) a criação ou configuração de uma
+carteira. 
 
 A configuração de drivers de vídeo é um fator de extrema importância
 para Criptomoedas que utilizam uma GPU para fazer a mineração. Um erro
 nesta etapa acaba por tornar a mineração não lucrativa, prejudicando o
-objetivo do usuário. Atualmente para que a Criptomoeda Etash ou
-Litecoin seja minerada no Ubuntu, é necessário uma série de comandos e
-cuidados para a instalação do software desejado e a utilização dele.
+objetivo do usuário. Atualmente, para que as Criptomoedas Etash ou
+Litecoin sejam mineradas no Ubuntu, é necessário uma série de comandos
+e cuidados para a instalação do software desejado e para utilização
+dele.
 
 % TODO: Referência bitcoin só ser lucrativo em grandes data centers
 % TODO: Referência algoritmo Etash
@@ -378,18 +380,18 @@ lucrativa. O Bitcoin com o passar dos anos virou uma Criptomoeda que
 só é possível de ser minerada lucrativamente em grandes data centers
 com hardwares específicos para o seu algoritmo. O Etash utiliza um
 algoritmo específico que somente permite a mineração lucrativa em
-GPUs. Fazer esta detecção entre capacidade de hardware e Criptomoeda
-não é um requisito que as distribuições atuais suprem.
-% TODO: Referências???
+GPUs. As distribuições Linux atuais não oferecem suporte para detectar
+o requisito mínimo de hardware para a realizar a mineração.
 
-Usuários muitas vezes não tem conhecimento suficiente para discernir
-as diferenças entre Criptomoedas e Hardwares. A sugestão da
-Criptomoeda no momento de instalação é importante para tornar a
-mineração mais lucrativa. Para melhoria da performance, elementos que
-não são cruciais para o funcionamento do sistema devem ser
-desativados. Por exemplo, a interface gráfica é algo que não é
-necessária para a mineração, logo, deve ser desativada sempre que
-possível.
+Para melhoria de desempenho do processo de mineração, torna-se
+relevante que o usuário escolha uma Criptomoeda adequada e desative
+elementos não essenciais que consomem recursos de hardware, como
+interfaces gráficas. No entanto, os usuários geralmente não têm
+conhecimento suficiente para fazer estas escolhas de forma a garantir
+uma mineração lucrativa. Diante deste problema, este trabalho propõe
+uma distribuição Linux que no momento da instalação realiza a
+configuração automática dos softwares necessários para o processo de
+mineração, facilitando, dessa forma, a atividade do usuário final.
 
 \subsection{Objetivos}
 
@@ -432,7 +434,7 @@ lista de descritores.
     \centering
     \caption{\label{table:descritores}Descritores utilizados}
     \makebox[\textwidth]{%
-        \begin{tabularx}{\textwidth}{@{} l >{\RaggedRight}X @{} }
+        \begin{tabularx}{.8\textwidth}{@{} l >{\RaggedRight}X @{} }
             \toprule
             \multicolumn{1}{c}{\bfseries Áreas} &
             \multicolumn{1}{c}{\bfseries Descritores} \\
@@ -583,17 +585,19 @@ que a mineração por GPU é muito mais lucrativa nessas Criptomoedas.
 \subsubsection{Definição}
 
 O Linux é um sistema operacional de código aberto, com mais de 100 mil
-aplicações de código aberto, tornando as possibilidades de que se
-encontre aplicações para Criptomoedas muito elevadas. Por ser muitas
-vezes grátis, seu custo muitas vezes se resume no custo do meio; ou
-seja, no custo de um USB, DVD, CD ou plano de rede \cite{Nunes2009}.
+softwares livres desenvolvidos para rodarem nele, tornando as
+possibilidades de que se encontre aplicações para Criptomoedas muito
+elevadas. Por ser muitas vezes grátis, seu custo geralmente se resume
+no custo do meio, ou seja, no custo de um USB, DVD, CD ou plano de
+rede \cite{Nunes2009}.
 
-A atualização é feita de forma automática pela rede. Isto é um
-requisito extremamente importante para a mineração de Criptomoedas, já
-que mudanças de implementação do sistema são atualizados
-automaticamente. No capítulo XXX apresentam-se distribuições que são
-\emph{rolling release}, ou seja, que não precisam de uma nova
-instalação para mudarem de versão \cite{Nunes2009, ArchWiki2018a}.
+A atualização é feita de forma automática pela rede. Esta
+característica é um requisito extremamente importante para a mineração
+de Criptomoedas, considerando que mudanças de implementação no sistema
+são atualizadas automaticamente. No capítulo XXX apresentam-se
+distribuições que são \emph{rolling release}, ou seja, que não
+precisam de uma nova instalação para mudarem de versão
+\cite{Nunes2009, ArchWiki2018a}.
 % TODO: Referência cruzada aqui
 
 \subsubsection{Distribuições Linux}\label{cap:distribuicoes-linux}
@@ -608,15 +612,15 @@ exemplo, o Linux Mint é baseado no Ubuntu, que é baseado no Debian
 
 \subsubsection{Meios de Instalação do Linux}
 
-A instalação e utilização do Linux de maneira resumida pode ser feita
-de três maneiras: (a) em modo convencional, onde é criada uma partição
-no disco principal do computador e instalada; (b) de modo \emph{live},
+De modo resumido, a instalação do Linux pode ser feita de três
+maneiras: (a) em modo convencional, onde é criada uma partição no
+disco principal do computador e instalada; (b) de modo \emph{live},
 onde no momento de \emph{boot} os arquivos do sistema são carregados
-somente na memória RAM\@ e (c) instalação portátil, onde os arquivos
-do sistema são instalados em uma mídia portátil \cite{Nunes2009}.
+somente na memória RAM\@ e (c) de modo portátil, onde os arquivos do
+sistema são instalados em uma mídia portátil \cite{Nunes2009}.
 
 O modo \emph{Live} permite a portabilidade, porém não permite a
-persistência de arquivos pessoais. Geralmente este modo é utilizado
+persistência de arquivos pessoais, geralmente este modo é utilizado
 para o usuário testar a distribuição antes da instalação. Para
 solucionar este problema, é possível, pela instalação portátil, manter
 um sistema que faz o \emph{boot} em uma mídia externa persistente.
@@ -624,10 +628,10 @@ Após feita a configuração, o usuário tem um \emph{Desktop} pessoal
 portátil.
 
 A Figura~\ref{fig:exemplo-distro} mostra a distribuição Arch Linux
-instalada de modo portátil em um HD externo; nela é mostrada
-informações gerais de \emph{hardware/software} e a estrutura
-das partições onde \code{/dev/sda} representa o HD externo e
-\code{/dev/sdb} representa o HD interno do Desktop.
+instalada de modo portátil em um HD externo. Nessa figura são
+apresentadas informações gerais de \emph{hardware/software} e a
+estrutura das partições, na qual \code{/dev/sda} representa o HD
+externo e \code{/dev/sdb} representa o HD interno do Desktop.
 
 \begin{figure}[!htbp]
     \caption{\label{fig:exemplo-distro}Uma distribuição Arch Linux
@@ -641,33 +645,33 @@ das partições onde \code{/dev/sda} representa o HD externo e
 
 \subsubsection{Criação de Uma Distribuição Linux}
 
-Segundo Paulo Nunes ``A criação  de  distribuições  Linux pode
-fazer-se, grosso modo,  através  de  dois processos distintos: criação
-de raiz ou criação a partir de outra distribuição.'' \cite[p.
-78]{Nunes2009}. A criação de raiz demanda muito mais conhecimento
-técnico em programação de baixo nível e sistemas operacionais, já que
-é preciso compilar o código fonte.
+``A criação  de  distribuições  Linux pode fazer-se, a grosso modo,
+através  de  dois processos distintos: criação de raiz ou criação a
+partir de outra distribuição.'' \cite[p.  78]{Nunes2009}. A criação de
+raiz demanda muito mais conhecimento técnico em programação de baixo
+nível e sistemas operacionais, já que é preciso compilar o código
+fonte.
 
 Já a criação a partir de outra distribuição é feita com ``ferramentas
 específicas, que  permitem adequar  a  nova  distribuição  aos
-requisitos\ldots'' \cite[p.  78]{Nunes2009}; é um processo menos
+requisitos\ldots'' \cite[p.  78]{Nunes2009}, sendo um processo menos
 trabalhoso. Dependendo da ferramenta, nenhum conhecimento técnico
-avançada é necessário, já que existem ferramentas gráficas para
-criação de distribuições Linux, como o Respin e o antigo SuseStudio
-\cite{Respin2018}.
+avançado é necessário, já que existem ferramentas gráficas para
+criação de distribuições Linux, como o Respin \cite{Respin2018} e o
+SuseStudio, que foi descontinuado.
 
-O hierarquia, como dito anteriormente é feita a partir de qual
-distribuição Linux é baseada em qual, na
-Figura~\ref{fig:hierarquia-arch} é mostrada a hierarquia atual do Arch
-Linux.
+Como dito anteriormente na Seção~\ref{cap:distribuicoes-linux}, uma
+hierarquia é feita a partir de qual distribuição Linux é baseada em
+qual. Na Figura~\ref{fig:hierarquia-arch} é mostrada a hierarquia
+atual do Arch Linux.
 
 \begin{figure}[!htbp]
     \caption{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
-    Linux gerado com a ferramenta gnuclad.}
+    Linux gerado com a ferramenta gnuclad \cite{Loli2017}.}
     \begin{center}
         \includegraphics[width=.9\linewidth]{timeline_arch.pdf}
     \end{center}
-    \legend{Fonte: O Autor e \cite{Loli2017}}
+    \legend{Fonte: O Autor.}
 \end{figure}
 
 % ----------------------------------------------------------
