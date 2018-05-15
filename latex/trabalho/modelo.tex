@@ -349,11 +349,9 @@ e instalação de drivers devem ser feita manualmente \cite{EthOS2018}.
 A criação de uma distribuição Linux genérica para fazer esta detecção
 facilitaria muito o trabalho de alguém que precisa configurar o
 software em um hardware de alto desempenho.
-% TODO: melhoria da citação do Ethos
 
 \subsection{Problema}
 
-% TODO: Citação do distrorank
 Fazer a configuração para uma distribuição Linux é um trabalho
 repetitivo e que demanda tempo. Atualmente, as distribuições mais
 populares automatizam o processo de instalação, configuração e
@@ -369,8 +367,8 @@ carteira.
 A configuração de drivers de vídeo é um fator de extrema importância
 para Criptomoedas que utilizam uma GPU para fazer a mineração. Um erro
 nesta etapa acaba por tornar a mineração não lucrativa, prejudicando o
-objetivo do usuário. Atualmente, para que as Criptomoedas Etash ou
-Litecoin sejam mineradas no Ubuntu, é necessário uma série de comandos
+objetivo do usuário. Atualmente, para que as Criptomoedas Monero ou
+Ethereum sejam mineradas no Ubuntu, é necessário uma série de comandos
 e cuidados para a instalação do software desejado e para utilização
 dele.
 
@@ -521,7 +519,14 @@ mineração seja feita. No Capítulo XXX apresentam-se os hardwares e
 algoritmos mais comumente utilizados para este fim.
 % TODO: Referência cruzada aqui
 
-% TODO: Discutir sobre GPU ser melhor que CPU, etc.
+Como cada algoritmo tem suas especialidades, foram criados chips ASIC
+para mineração de Criptomoedas. Um chip ASIC
+\emph{application-specific integrated circuit} é um circuito
+desenvolvido com um propósito único \cite{Smith1997}. A mineração do
+Bitcoin atualmente só é lucrativa com chips ASIC\@, já o Monero, outra
+Criptomoeda, utiliza o algoritmo CryptoNightV7, especialmente
+desenvolvido para dificultar a utilização de chips ASIC\@
+\cite{NiceHash2018}.
 
 \subsubsection{Rigs de Mineração}
 
@@ -562,23 +567,22 @@ de quem solucione o bloco, a recompensa é dividida baseado no trabalho
 do node. Diferente de quando se minera sozinho, onde a recompensa só é
 ganha por uma pequena possibilidade.
 
-\subsubsection{Litecoin}
-% Descrever como o Litecoin surgiu e o que ele é
-% Explicar como o litecoin tem um algoritmo de mineração que evita o
+\subsubsection{Monero}
+% Descrever como o Monero surgiu e o que ele é
+% Explicar como o monero tem um algoritmo de mineração que evita o
 % uso por chips ASIC e FPGAs.
 % TODO: Terminar esse parágrafo
 
-Outras Criptomoedas, como o Litecoin e Etash, usam algoritmos que
+Outras Criptomoedas, como o Monero e Ethereum, usam algoritmos que
 dificultam a mineração por chips especializados, como ASICs e FPGAs.
 Tornando a mineração somente lucrativa em CPUs ou GPUs
 \cite{Weber2012}. Os Rigs de Mineração são valorizados dessa forma, já
 que a mineração por GPU é muito mais lucrativa nessas Criptomoedas.
 
-\subsubsection{Ethereum e Ethash}
+\subsubsection{Ethereum}
 % Descrever como o Ethereum surgiu e o que ele é
-% Explicar como o Ethash também usa um algoritmo de mineração que
+% Explicar como o Ethereum também usa um algoritmo de mineração que
 % evita o uso por chips ASIC e FPGAs.
-% TODO: Terminar esse parágrafo
 
 \subsection{Sistema Operacionais Linux e Suas Distribuições}
 
