@@ -659,7 +659,7 @@ fonte.
 
 Já a criação a partir de outra distribuição é feita com ``ferramentas
 específicas, que  permitem adequar  a  nova  distribuição  aos
-requisitos\ldots'' \cite[p.  78]{Nunes2009}, sendo um processo menos
+requisitos\ldots'' \cite[p. 78]{Nunes2009}, sendo um processo menos
 trabalhoso. Dependendo da ferramenta, nenhum conhecimento técnico
 avançado é necessário, já que existem ferramentas gráficas para
 criação de distribuições Linux, como o Respin \cite{Respin2018} e o
@@ -677,6 +677,88 @@ atual do Arch Linux.
         \includegraphics[width=.9\linewidth]{timeline_arch.pdf}
     \end{center}
     \legend{Fonte: O Autor.}
+\end{figure}
+
+\subsubsection{Debian}
+
+O Debian é uma distribuição Linux que visa a estabilidade e código
+aberto, com mais de $51.000$ pacotes pré compilados em seus
+repositórios, ela se tornou uma distribuição muito difundida nos
+últimos anos \cite{Debian2018}. Existem três três versões do Debian,
+(a) a \emph{stable} que tem uma ``vida útil'' de quatro anos e é a
+mais destinada para usuários comuns, (b) a \emph{testing} que é
+destinada para testes antes de virar uma \emph{stable} release e (c) a
+\emph{unstable}, usada para o desenvolvimento de Debian.
+
+Os gerenciadores de pacotes do Debian por linha de comando são o
+\code{dpkg}, \code{apt} e \code{aptitude} \cite{Debian2016}. Para que
+um pacote entre nos repositórios oficiais do Debian, é necessário que
+ele siga regras rigorosas de software livre. Repositórios não oficiais
+devem ser adicionados manualmente pelo usuário.
+
+\subsubsection{Ubuntu}
+
+Como o Debian não é muito convidativo para usuários sem um
+conhecimento técnico moderado, em $2004$, o Ubuntu surgiu como uma
+distribuição construída com foco o em usabilidade. Sua versão Desktop
+possui vários pacotes já instalados para um uso genérico do dia a dia,
+como softwares para edição de texto, reprodutores de mídia e
+interfaces gráficas \cite{UbuntuFundation2018}.
+
+Por ser uma distribuição baseada no Debian, existem semelhanças entre
+as duas. Sua versão estável, ou \emph{LTS release}, tem suporte por
+cinco anos \cite{UbuntuWiki2017}. Variações como o Ubuntu Server são
+destinadas a servidores e não tem uma interface gráfica. Outras
+variações criadas pela comunidade, como o Kubuntu e Xubuntu, somente
+apresentam interfaces gráficas diferentes.
+
+Os gerenciadores de pacotes do Ubuntu são iguais ao Debian e a
+utilização de um repositório não oficial exige que o usuário o
+adicione manualmente \cite{UbuntuWiki2018}.
+
+\subsubsection{Fedora}
+
+Tendo suas raízes no Red Hat, o Fedora é uma distribuição criada para
+facilitar a vida do usuário. Suas duas versões, (a) a
+\emph{Workstation} destinada a Desktops e (b) a \emph{Server}
+destinada a servidores possuem interfaces gráficas
+\cite{FedoraProject2018}. As versões do Fedora focam a estabilidade e
+são atualizadas em média a cada 13 meses \cite{FedoraProject2018a}.
+
+Seu gerenciador de pacotes é o \code{rpm}, o mesmo do Red Hat. Como no
+Debian e Ubuntu, repositórios não oficiais devem ser adicionados
+manualmente \cite{FedoraProject2018b}.
+
+\subsubsection{Arch}
+
+O Arch Linux é uma distribuição que visa a versatilidade e
+estabilidade. Destinada a usuários mais experientes, no momento de
+instalação, é mostrada uma linha de comando para que o usuário escolha
+quais pacotes vão ser instalados \cite{ArchWiki2018a}. Seu modelo de
+atualização é \emph{rolling release}, ou seja, os pacotes da
+distribuição são atualizados incrementalmente, em vez de existir um
+número ou tipo fixo de versão \cite{ArchWiki2018c}. É uma distribuição
+estável, porem é necessário verificar os canais de notícias do Arch
+Linux para eventuais intervenções manuais no momento de atualização.
+
+O que distingue o Arch de outras distribuições é o seu gerenciador de
+pacotes \cod{pacman} que usa o \code{PKGBUILD}, um modelo de criação
+de pacotes para a distribuição, que permite que até programas que só
+funcionam no Windows tenham pacotes no repositório da comunidade. Este
+repositório da comunidade se chama \code{AUR} \emph{Arch Linux User
+Repository} e qualquer usuário do Arch Linux pode adicionar um novo
+pacote no repositório \cite{ArchWiki2018d}. A Imagem XX mostra um
+pacote criado pelo autor de um programa que só tem uma versão no
+Windows.
+
+\begin{figure}[!htbp]
+    \caption{\label{fig:exemplo-aur}O programa Algodoo, um simulador
+    de física que só tem uma versão no Windows.}
+    \begin{center}
+        \includegraphics[width=\linewidth]{exemplo_aur.png}
+    \end{center}
+    \legend{Fonte: O Autor.
+    \url{https://github.com/MatMercer/aur-algodoo}}
 \end{figure}
 
 % ----------------------------------------------------------
