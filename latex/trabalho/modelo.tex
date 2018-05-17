@@ -67,6 +67,7 @@ brazil,				% o último idioma é o principal do documento
 \usepackage[svgnames,table]{xcolor}
 \usepackage[tableposition=above]{caption}
 \usepackage{tabularx}
+\usepackage{float}              % float H para imagens e tabelas
 % ---
 
 % ---
@@ -428,7 +429,7 @@ pesquisa deste trabalho, que posteriormente foram combinados para o
 cruzamento dos assuntos. A Tabela~\ref{table:descritores} mostra a
 lista de descritores.
 
-\begin{table}
+\begin{table}[H]
     \centering
     \caption{\label{table:descritores}Descritores utilizados}
     \makebox[\textwidth]{%
@@ -538,7 +539,7 @@ gráficas trabalharem em conjunto em um mesmo sistema. A
 Figura~\ref{fig:rig_mineracao} é um exemplo de um rig de mineração com
 múltiplas placas gráficas \cite{BitcoinWiki2015}.
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \caption{\label{fig:rig_mineracao}Um rig de mineração com 13 GPUs
     NVidia 1060}
     \begin{center}
@@ -546,8 +547,6 @@ múltiplas placas gráficas \cite{BitcoinWiki2015}.
     \end{center}
     \legend{Fonte: \url{https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}}
 \end{figure}
-
-\pagebreak
 
 A medida utilizada para apresentar o desempenho de um rig de mineração
 é ``hashes por segundo'', representado por $\mathbf{h/s}$.
@@ -638,7 +637,7 @@ apresentadas informações gerais de \emph{hardware/software} e a
 estrutura das partições, na qual \code{/dev/sda} representa o HD
 externo e \code{/dev/sdb} representa o HD interno do Desktop.
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \caption{\label{fig:exemplo-distro}Uma distribuição Arch Linux
         instalada de maneira portátil. O \emph{boot} foi feito com um HD
     externo em um computador pessoal.}
@@ -670,7 +669,7 @@ hierarquia é feita a partir de qual distribuição Linux é baseada em
 qual. Na Figura~\ref{fig:hierarquia-arch} é mostrada a hierarquia
 atual do Arch Linux.
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \caption{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
     Linux gerado com a ferramenta gnuclad \cite{Loli2017}.}
     \begin{center}
@@ -751,7 +750,7 @@ pacote no repositório \cite{ArchWiki2018d}. A Imagem XX mostra um
 pacote criado pelo autor de um programa que só tem uma versão no
 Windows.
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \caption{\label{fig:exemplo-aur}O programa Algodoo, um simulador
     de física que só tem uma versão no Windows.}
     \begin{center}
