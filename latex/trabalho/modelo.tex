@@ -284,8 +284,7 @@ requisito parcial de avaliação.}
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-\item[ABNT] Associação Brasileira de Normas Técnicas
-\item[abnTeX] ABsurdas Normas para TeX
+\item[AUR] \emph{Arch Linux User Repository} 
 \end{siglas}
 % ---
 
@@ -659,10 +658,11 @@ fonte.
 Já a criação a partir de outra distribuição é feita com ``ferramentas
 específicas, que  permitem adequar  a  nova  distribuição  aos
 requisitos\ldots'' \cite[p. 78]{Nunes2009}, sendo um processo menos
-trabalhoso. Dependendo da ferramenta, nenhum conhecimento técnico
-avançado é necessário, já que existem ferramentas gráficas para
-criação de distribuições Linux, como o Respin \cite{Respin2018} e o
-SuseStudio, que foi descontinuado.
+trabalhoso. O \code{archiso} é um exemplo de programa que cria
+distribuições Linux customizadas a partir do Arch Linux. Dependendo da
+ferramenta, nenhum conhecimento técnico avançado é necessário, já que
+existem aplicações gráficas para criação de distribuições Linux, como
+o Respin \cite{Respin2018} e o SuseStudio, que foi descontinuado.
 
 Como dito anteriormente na Seção~\ref{cap:distribuicoes-linux}, uma
 hierarquia é feita a partir de qual distribuição Linux é baseada em
@@ -699,7 +699,7 @@ devem ser adicionados manualmente pelo usuário.
 
 Como o Debian não é muito convidativo para usuários sem um
 conhecimento técnico moderado, em $2004$, o Ubuntu surgiu como uma
-distribuição construída com foco o em usabilidade. Sua versão Desktop
+distribuição construída com foco em usabilidade. Sua versão Desktop
 possui vários pacotes já instalados para um uso genérico do dia a dia,
 como softwares para edição de texto, reprodutores de mídia e
 interfaces gráficas \cite{UbuntuFundation2018}.
@@ -733,32 +733,55 @@ manualmente \cite{FedoraProject2018b}.
 O Arch Linux é uma distribuição que visa a versatilidade e
 estabilidade. Destinada a usuários mais experientes, no momento de
 instalação, é mostrada uma linha de comando para que o usuário escolha
-quais pacotes vão ser instalados \cite{ArchWiki2018a}. Seu modelo de
-atualização é \emph{rolling release}, ou seja, os pacotes da
-distribuição são atualizados incrementalmente, em vez de existir um
-número ou tipo fixo de versão \cite{ArchWiki2018c}. É uma distribuição
-estável, porem é necessário verificar os canais de notícias do Arch
-Linux para eventuais intervenções manuais no momento de atualização.
+quais pacotes vão ser instalados. Seu modelo de atualização é
+\emph{rolling release}, ou seja, os pacotes da distribuição são
+atualizados incrementalmente, em vez de existir um número ou tipo fixo
+de versão \cite{ArchWiki2018a}. É uma distribuição estável, porem é
+necessário verificar os canais de notícias do Arch Linux para
+eventuais intervenções manuais no momento de atualização
+\cite{ArchWiki2018c}.
 
 O que distingue o Arch de outras distribuições é o seu gerenciador de
 pacotes \code{pacman} que usa o \code{PKGBUILD}, um modelo de criação
 de pacotes para a distribuição, que permite que até programas que só
 funcionam no Windows tenham pacotes no repositório da comunidade. Este
-repositório da comunidade se chama \code{AUR} \emph{Arch Linux User
-Repository} e qualquer usuário do Arch Linux pode adicionar um novo
-pacote no repositório \cite{ArchWiki2018d}. A Imagem XX mostra um
-pacote criado pelo autor de um programa que só tem uma versão no
-Windows.
+repositório da comunidade se chama \code{AUR} e qualquer usuário do
+Arch Linux pode adicionar um novo pacote no repositório, desde que
+regras básicas sejam seguidas \cite{ArchWiki2018d}. A
+Figura~\ref{fig:exemplo-aur} mostra o pacote \code{algodoo-wine},
+disponível no \code{AUR}.
 
 \begin{figure}[H]
     \caption{\label{fig:exemplo-aur}O programa Algodoo, um simulador
-    de física que só tem uma versão no Windows.}
+    de física que só tem uma versão oficial no Windows.}
     \begin{center}
         \includegraphics[width=\linewidth]{exemplo_aur.png}
     \end{center}
     \legend{Fonte: O Autor.
     \url{https://github.com/MatMercer/aur-algodoo}}
 \end{figure}
+
+\subsubsection{Gentoo}
+
+Todas as distribuições discutidas anteriormente são binárias, isto
+quer dizer que o Kernel, o programa que faz a interface entre o
+hardware e software, já vem compilado. O Gentoo é baseado no FreeBSD e
+possui várias semelhanças com o Arch Linux \cite{GentooFundation2018}.
+Por exemplo, seu modelo de atualização também é \emph{rolling release}
+e seu principal foco é a customização. No quesito estabilidade é que
+surgem as maiores diferenças.
+
+O Portage é seu gerenciador de pacotes, e a maioria desses pacotes
+devem ser compilados no momento de instalação \cite{GentooWiki2018}.
+Como o Kernel também é compilado, podem surgir problemas como a falta
+de bibliotecas e/ou bugs no código dos pacotes. Devido a esse fato,
+sua estabilidade é comprometida e o usuário deve ter um conhecimento
+técnico maior, além de ter uma cautela maior no momento de instalação.
+
+O Gentoo, com o passar dos anos, virou a referência de uma
+distribuição para quem quer aprender mais sobre Unix, pois seu modo de
+instalação exige um estudo mais aprofundado. Porém, não tão
+aprofundado outras distribuições, como o Linux From Scratch.
 
 % ----------------------------------------------------------
 % Referências bibliográficas (nome do arquivo de referencias, sem o
