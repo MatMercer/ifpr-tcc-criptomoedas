@@ -583,7 +583,8 @@ um chip ASIC\@.
 % Explicar como o Ethereum também usa um algoritmo de mineração que
 % evita o uso por chips ASIC e FPGAs.
 
-\subsection{Sistema Operacionais Linux e Suas Distribuições}
+\subsection{Sistema Operacionais Linux e Suas
+Distribuições}\label{cap:sistemas-linux}
 
 \subsubsection{Definição}
 
@@ -603,7 +604,7 @@ precisam de uma nova instalação para mudarem de versão
 \cite{Nunes2009, ArchWiki2018a}.
 % TODO: Referência cruzada aqui
 
-\subsubsection{Distribuições Linux}\label{cap:distribuicoes-linux}
+\subsubsection{Distribuições Linux}
 
 Uma distribuição Linux é uma variação do sistema operacional Linux
 para um determinado contexto. O mapa de distribuições Linux contém
@@ -782,6 +783,55 @@ O Gentoo, com o passar dos anos, virou a referência de uma
 distribuição para quem quer aprender mais sobre Unix, pois seu modo de
 instalação exige um estudo mais aprofundado. Porém, não tão
 aprofundado outras distribuições, como o Linux From Scratch.
+
+\subsubsection{Características Relevantes em Distribuições Linux Para Mine-
+ração de Criptomoedas}
+
+São características importantes de uma distribuição: (a) Ela deve ser
+capaz de minerar moedas que são possíveis de serem mineradas
+lucrativamente em computadores domésticos e (b) deve suportar rigs de
+mineração por meio de drivers. No quesito tamanho, sua ISO deve ter no
+máximo 4GB\@.
+
+No quesito gerenciador de pacotes, (a) devem ser suficientemente
+estáveis, (b) instalação e atualização deve ser simples, (c) deve
+possuir a disponibilidade de pacotes com código fechado já que drivers
+de NVidia não são open-source, (d) a quantidade de pacotes deve ser
+extensa e (e) as versões do pacote não devem ser muito antigas.
+
+A Tabela~\ref{table:quadro-comparativo} mostra o comparativo entres as
+distribuições discutidas no Capítulo~\ref{cap:sistemas-linux}.
+
+\subsubsection{Quadro Comparativo Entre Distribuições Linux Para a
+Proposta do Trabalho}
+
+\begin{table}[H]
+    \centering
+    \caption{\label{table:quadro-comparativo}Quadro Comparativo Entre
+    Distribuições Linux}
+    \makebox[\textwidth]{%
+        \begin{tabularx}{1\textwidth}{>{\raggedright}p{3cm}cccccc}
+            \toprule
+            \multicolumn{1}{l}{\bfseries Distribuição} &
+            \multicolumn{1}{c}{Debian} &
+            \multicolumn{1}{c}{Ubuntu} &
+            \multicolumn{1}{c}{Fedora} &
+            \multicolumn{1}{c}{Arch} &
+            \multicolumn{1}{c}{Gentoo} \\
+            \midrule
+
+            \textbf{Tamanho da ISO}              & 600MB ou 4.7GB & 1.5GB & 1.5GB & 600MB & 300MB ou 2GB \\
+            \midrule
+            \textbf{Taxa de Atualização}         & Baixa & Média & Alta & Alta & Alta \\
+            \midrule
+            \textbf{Disponibilidade de Pacotes}  & Média & Alta & Alta & Alta & Alta \\
+            \midrule
+            \textbf{Pacotes de Código Fechado}   & Sim & Sim & Não & Sim & Parcialmente \\
+
+            \toprule
+        \end{tabularx}
+    }
+\end{table}
 
 % ----------------------------------------------------------
 % Referências bibliográficas (nome do arquivo de referencias, sem o
