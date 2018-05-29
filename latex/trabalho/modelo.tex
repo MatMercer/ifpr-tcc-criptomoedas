@@ -633,17 +633,23 @@ onde no momento de \emph{boot} os arquivos do sistema são carregados
 somente na memória RAM\@ e (c) de modo portátil, onde os arquivos do
 sistema são instalados em uma mídia portátil \cite{Nunes2009}.
 
-O modo \emph{Live} permite a portabilidade, porém não permite a
-persistência de arquivos pessoais, geralmente este modo é utilizado
-para o usuário testar a distribuição antes da instalação. Para
-solucionar este problema, é possível, pela instalação portátil, manter
-um sistema que faz o \emph{boot} em uma mídia externa persistente.
-Após feita a configuração, o usuário tem um \emph{Desktop} pessoal
-portátil.
+%O modo \emph{Live} permite a portabilidade, porém não permite a
+%persistência de arquivos pessoais, geralmente este modo é utilizado
+%para o usuário testar a distribuição antes da instalação. Para
+%solucionar este problema, é possível, pela instalação portátil, manter
+%um sistema que faz o \emph{boot} em uma mídia externa persistente.
+%Após feita a configuração, o usuário tem um \emph{Desktop} pessoal
+%portátil.
+
+Uma distribuição Linux em modo Live cria um disco virtual na memória
+RAM do computador em momento de boot, sem a persistência de arquivos.
+Geralmente este modo é utilizado para o usuário testar a distribuição
+antes de a instalar em um disco físico. Uma distribuição Linux em modo
+portátil usa uma mídia portátil para persistir arquivos pessoais.
 
 A Figura~\ref{fig:exemplo-distro} mostra a distribuição Arch Linux
 instalada de modo portátil em um HD externo. Nessa figura são
-apresentadas informações gerais de \emph{hardware/software} e a
+apresentadas informações gerais de hardware/software e a
 estrutura das partições, na qual \code{/dev/sda} representa o HD
 externo e \code{/dev/sdb} representa o HD interno do Desktop.
 
