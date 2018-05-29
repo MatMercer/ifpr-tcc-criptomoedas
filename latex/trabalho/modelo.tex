@@ -465,6 +465,27 @@ complementar a pesquisa.
 
 \section{Revisão de Literatura}
 
+% TODO:
+%O CAPÍTULO 2 SUGIRO TER A SEGUINTE ESTRUTURA:
+%2.1 - CRIPTOMOEDAS (aqui você deve escrever sobre: definição,
+%quantas moedas existem, quais são os tipos, todas são de tokens?,
+%existe o smart contract – o que são eles....você deve aprofundar
+%melhor no texto)
+%O LEITOR PRECISA ENTENDER SOBRE AS CRIPTOMOEDAS E AS
+%SUAS ESTRUTURAS E TIPOS
+%2.1.1 – MOEDAS (aqui você iria descrever a ESTRUTURA do BITCOIN,
+%EHTEREUM E MONERO)
+%2.2 - MINERAÇÃO (aqui você deve explicar sobre o funcionamento da
+%rede de maneira mais aprofundada, mostrar uma imagem que mostra
+%a comunicação entre as máquinas, o que as máquinas transmitem
+%uma para as outras?, o são rigs?, o que são e como funcionam os
+%pools?, explicar o que é e como funciona o processamento da CPU e
+%GPU, ...aprofundar melhor)
+
+%2.3 – Distribuição Linux (conceitos, tipos, derivações, características
+%principais, inclua as distribuições e os diferenciais, crie um quadro
+%para comparar as distribuições que explicar..)
+
 \subsection{Criptomoedas}
 
 As criptomoedas são um sistema descentralizado e independente de uma
@@ -474,7 +495,7 @@ essas transações eram efetivadas. Isto chamou muito a atenção de
 investidores, o que levou a uma difusão desta tecnologia na nossa
 sociedade \cite{Nakamoto2008, Prado2017}.
 
-\subsubsection{Definição}
+\subsubsection{Definição}\label{cap:definicao}
 
 Uma criptomoeda é um sistema \emph{peer-to-peer} onde o controle da
 moeda é feito por propriedades matemáticas e não por uma instituição
@@ -487,7 +508,7 @@ tenha a chave privada de sua carteira.
 
 Em vez de existir um balanço em uma conta, existe uma lista de
 transações feitas desde o início do sistema, chamada de
-\emph{Blockchain} \cite{Weber2012}\label{def:blockchain}. O
+\emph{Blockchain} \cite{Weber2012}. O
 \emph{Blockchain}, também referenciado como ``protocolo de
 confiança'', usa a decentralização de uma instituição financeira como
 uma medida de segurança. Cada transação deve ser validada
@@ -497,7 +518,7 @@ validação seguindo as suas próprias regras, sujeito a erros.
 
 \subsubsection{Mineração}
 
-Como dito anteriormente, na Seção~\ref{def:blockchain}, o
+Como dito anteriormente, na Seção~\ref{cap:definicao}, o
 \emph{Blockchain} serve para validar uma transação. Somente existe uma
 maneira de confirmar uma transação no \emph{Blockchain}: resolvendo um
 ``quebra cabeças'' criptográfico \cite{Weber2012}. Nessa resolução
@@ -614,7 +635,7 @@ precisam de uma nova instalação para mudarem de versão
 \cite{Nunes2009, ArchWiki2018a}.
 % TODO: Referência cruzada aqui
 
-\subsubsection{Distribuições Linux}
+\subsubsection{Distribuições Linux}\label{sec:distribuicoes-linux}
 
 Uma distribuição Linux é uma variação do sistema operacional Linux
 para um determinado contexto. O mapa de distribuições Linux contém
@@ -682,9 +703,6 @@ ferramenta, nenhum conhecimento técnico avançado é necessário, já que
 existem aplicações gráficas para criação de distribuições Linux, como
 o Respin \cite{Respin2018} e o SuseStudio, que foi descontinuado.
 
-Como dito anteriormente na Seção~\ref{cap:distribuicoes-linux}, uma
-hierarquia é feita a partir de qual distribuição Linux é baseada em
-qual.
 
 \begin{figure}[H]
     \caption{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
@@ -695,17 +713,19 @@ qual.
     \legend{Fonte: O Autor.}
 \end{figure}
 
-Na Figura~\ref{fig:hierarquia-arch} é mostrada a hierarquia atual do
-Arch Linux. Cada nó equivale a uma distribuição e a sua data de
-criação é mostrada cronologicamente da esquerda para a direita.
+Como dito anteriormente na Seção~\ref{sec:distribuicoes-linux}, uma
+hierarquia é feita a partir de qual distribuição Linux é baseada em
+qual. Na Figura~\ref{fig:hierarquia-arch} é mostrada a hierarquia
+atual do Arch Linux. Cada nó equivale a uma distribuição e a sua data
+de criação é mostrada cronologicamente da esquerda para a direita.
 Distribuições que são baseadas em outras são mostradas
-hierarquicamente. Distribuições descontinuadas não continuam até o ano
-2018. Mudanças de nomes no meio do projeto são mostradas por nós
-menores.
+hierarquicamente. 
 
-Por exemplo, o Manjaro foi criada em $2011$ e é baseado no Arch. Já o
-AL-AMLUG foi criado em $2003$ e mudou o nome para Archie que foi
-descontinuado em $2005$.
+Distribuições descontinuadas não continuam até o ano 2018. Mudanças de
+nomes no meio do projeto são mostradas por nós menores. Por exemplo, o
+Manjaro foi criada em $2011$ e é baseado no Arch. Já o AL-AMLUG foi
+criado em $2003$ e mudou o nome para Archie que foi descontinuado em
+$2006$.
 
 \subsubsection{Debian}
 
@@ -791,7 +811,10 @@ regras básicas sejam seguidas \cite{ArchWiki2018d}.
 A Figura~\ref{fig:exemplo-aur} mostra o pacote \code{algodoo-wine},
 disponível no \code{AUR}. A instalação do programa é feita utilizando
 a ferramenta \code{innoextract} para a extração dos binários do
-instalador Windows para serem executados com o programa \code{WINE}.
+instalador Windows que serão executados com o programa \code{WINE}.
+Essa extração dos binários é feita automaticamente pelo \code{pacman}.
+Em qualquer momento o usuário pode optar por remover o programa, já
+que o gerenciador se encarrega deste trabalho.
 
 \subsubsection{Gentoo}
 
@@ -812,12 +835,12 @@ técnico maior, além de ter uma cautela maior no momento de instalação.
 
 O Gentoo, com o passar dos anos, virou a referência de uma
 distribuição para quem quer aprender mais sobre Unix, pois seu modo de
-instalação exige um estudo mais aprofundado. Porém, não tão
-aprofundado outras distribuições, como o Linux From Scratch.
+instalação exige um estudo mais aprofundado.
 
 \subsubsection{Características Relevantes em Distribuições Linux Para Mine-
 ração de criptomoedas}
 
+% TODO: Refazer este parágrafo
 São características importantes de uma distribuição: (a) Ela deve ser
 capaz de minerar moedas que são possíveis de serem mineradas
 lucrativamente em computadores domésticos e (b) deve suportar rigs de
