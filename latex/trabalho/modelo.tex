@@ -841,17 +841,17 @@ instalação exige um estudo mais aprofundado.
 ração de criptomoedas}
 
 % TODO: Refazer este parágrafo
-São características importantes de uma distribuição: (a) Ela deve ser
-capaz de minerar moedas que são possíveis de serem mineradas
-lucrativamente em computadores domésticos e (b) deve suportar rigs de
-mineração por meio de drivers. No quesito tamanho, sua ISO deve ter no
-máximo 4GB\@.
+Uma distribuição Linux deve ter as seguintes características no seu
+gerenciador de pacotes, (a) os programas disponíveis devem ser
+suficientemente estáveis, (b) a instalação e atualização deve ser
+simples, (c) deve possuir a disponibilidade de pacotes com código
+fechado já que drivers de NVidia não são open-source, (d) a quantidade
+de pacotes deve ser extensa e (e) as versões do pacote não devem ser
+muito antigas.
 
-No quesito gerenciador de pacotes, (a) devem ser suficientemente
-estáveis, (b) instalação e atualização deve ser simples, (c) deve
-possuir a disponibilidade de pacotes com código fechado já que drivers
-de NVidia não são open-source, (d) a quantidade de pacotes deve ser
-extensa e (e) as versões do pacote não devem ser muito antigas.
+Outra fator importante para a customização é o tamanho da ISO de
+instalação, já que qualquer pacote adicionado a uma ISO customizada
+ocupa mais espaço.
 
 A Tabela~\ref{table:quadro-comparativo} mostra o comparativo entres as
 distribuições discutidas no Capítulo~\ref{cap:sistemas-linux}.
@@ -880,12 +880,31 @@ Proposta do Trabalho}
             \midrule
             \textbf{Disponibilidade de Pacotes}  & Média & Alta & Alta & Alta & Alta \\
             \midrule
-            \textbf{Pacotes de Código Fechado}   & Sim & Sim & Não & Sim & Parcialmente \\
+            \textbf{Pacotes de Código Fechado}   & Sim & Sim & Parcialmente & Sim & Parcialmente \\
+            \midrule
+            \textbf{Estabilidade dos Pacotes}   & Alta & Alta & Alta & Média & Média \\
 
             \toprule
         \end{tabularx}
     }
 \end{table}
+
+Pode-se perceber que o Debian, Arch e Gentoo possuem o menor tamanho
+da ISO de instalação. A principal diferença entre elas esta no
+gerenciador de pacotes, onde o Debian fica em vantagem na
+estabilidade, porém não na quantidade. O Gentoo e Fedora tem poucos
+pacotes de código fechado em seus repositórios, prevenindo a
+instalação nativa de alguns drivers proprietários.
+
+O Ubuntu por ser para um uso mais genérico possui muitos pacotes já
+instalados em sua ISO\@. Isso é um problema para a mineração de
+Criptomoedas já que a quantidade de pacotes interfere no desempenho do
+sistema. 
+
+O Arch Linux e seu sistema gerenciador de pacotes se encaixam melhor
+para o intuito de mineração de criptomoedas, pois a quantidade de
+pacotes é extensa e a atualização é alta, fator necessário para a
+instalação dos mais variados mineradores de criptomoedas.
 
 % ----------------------------------------------------------
 % Referências bibliográficas (nome do arquivo de referencias, sem o
