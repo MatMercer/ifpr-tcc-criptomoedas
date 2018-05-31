@@ -488,6 +488,8 @@ complementar a pesquisa.
 
 \subsection{Criptomoedas}
 
+\subsubsection{Definição}\label{cap:definicao}
+
 As criptomoedas são um sistema descentralizado e independente de uma
 instituição financeira. Sua facilidade de uso tornou as taxas de
 transações cambiais menores, além de aumentar a velocidade com que
@@ -495,8 +497,7 @@ essas transações eram efetivadas. Isto chamou muito a atenção de
 investidores, o que levou a uma difusão desta tecnologia na nossa
 sociedade \cite{Nakamoto2008, Prado2017}.
 
-\subsubsection{Definição}\label{cap:definicao}
-
+\begin{comment}
 Uma criptomoeda é um sistema \emph{peer-to-peer} onde o controle da
 moeda é feito por propriedades matemáticas e não por uma instituição
 centralizada. Cada usuário é identificado por uma representação de sua
@@ -515,6 +516,48 @@ uma medida de segurança. Cada transação deve ser validada
 criptograficamente por vários nós de uma rede antes de entrar para o
 \emph{Blockchain} \cite{LChicarino}; diferente de um banco, que faz a
 validação seguindo as suas próprias regras, sujeito a erros.
+
+\end{comment}
+
+O Bitcoin foi criado em 2008 seu primeiro bloco, também chamado de
+``bloco gênesis'' serve como ponto de referência para a criação das
+\emph{alt coins} - moedas alternativas. As moedas alternativas são
+criptomoedas que tem uma implementação diferente quando comparadas ao
+Bitcoin. Existem aproximadamente mais de 800 \emph{alt coins} moedas
+registradas no site Coin Market Cap \cite{Arsov, CoinMarketCap2018}.
+Cada uma dessas moedas foram criadas para aplicações específicas,
+diferentes do Bitcoin.  Suas implementações diferentes de criptomoedas
+são (a) as de tokens e (b) as de contratos inteligentes.
+
+O Bitcoin serve para transferir tokens, que são a representação de
+algo transferível. Na implementação desta moeda, seus tokens possuem
+valor monetário. Já o Ethereum é uma moeda alternativa que foca na
+implementação de uma linguagem de programação Turing Completa para a
+criação de scripts ou ``contratos inteligentes'' \cite{Narayanan2016}. 
+
+O contrato inteligente é um programa que é executado no Blockchain
+para executar regras de negócio específicas. Contratos inteligentes
+permitem que qualquer aplicação possa ser implementada em uma mesma
+moeda. Uma boa analogia de um contrato inteligente na prática é um
+contrato para a prestação de serviços de uma empresa fictícia.
+
+\begin{figure}[H]
+    \caption{\label{fig:contratos-inteligentes}Exemplo de um contrato
+    inteligente.}
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{contratos-inteligentes.png}
+    \end{center}
+    \legend{Fonte: O Autor.}
+\end{figure}
+
+A empresa primeiro deve criar um programa para ser executado no
+Blockchain, na Figura~\ref{fig:contratos-inteligentes}, a flecha em
+verde é o começo do contrato. O serviço de TV custa 10 ether (token do
+ethereum), portanto se Bob pagou 10 ether, ele recebe o serviço, já
+Alice que pagou somente 1, não recebe o serviço de TV\@. Essa é uma
+visão abstrata de contratos inteligentes, já que sua implementação na
+prática possui maior complexidade \cite{Narayanan2016}.
+
 
 \subsubsection{Moedas}
 % Descrever como o Monero surgiu e o que ele é
