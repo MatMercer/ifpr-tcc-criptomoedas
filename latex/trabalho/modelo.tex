@@ -110,7 +110,7 @@ brazil,				% o último idioma é o principal do documento
 % ---
 % Informações de dados para CAPA, FOLHA DE ROSTO e FOLHA DE APROVAÇÃO
 % ---
-\titulo{Automatização de Mineração de Criptomoedas Com Distribuição
+\titulo{Automatização de Mineração de criptomoedas Com Distribuição
 Linux}
 \autor{Mateus Mercer}
 \local{Londrina}
@@ -164,6 +164,9 @@ requisito parcial de avaliação.}
 
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Hifenização customizada
+\hyphenation{Barriviera}
 
 % ---
 % compila o indice
@@ -286,18 +289,21 @@ requisito parcial de avaliação.}
 % ---
 \begin{siglas}
 \item[AUR] \emph{Arch Linux User Repository} 
+\item[ASIC] \emph{Application-Specific Integrated Circuit}
 \end{siglas}
 % ---
 
 % ---
 % inserir lista de símbolos
 % ---
+\begin{comment}
 \begin{simbolos}
 \item[$ \Gamma $] Letra grega Gama
 \item[$ \Lambda $] Lambda
 \item[$ \zeta $] Letra grega minúscula zeta
 \item[$ \in $] Pertence
 \end{simbolos}
+\end{comment}
 % ---
 
 % ---
@@ -399,16 +405,11 @@ do software de criptomoeda para otimizar o tempo de instalação do
 usuário.
 
 Específicos: 
-% TODO: Discutir com o professor, o que fazer aqui?
-% COMO EU ALTEREI O TÍTULO FAÇA UMA REVISÃO NOS
-% OBJETIVOS GERAL E ESPECÍFICOS PARA FICAREM RELACIONADOS.
 \begin{itemize} 
 
-    \item Pesquisar drivers genéricos que funcionam em
-        hardwares de alto desempenho;
-
-    \item Personalizar uma distribuição Linux para a automatização da
-        instalação dos drivers genéricos;
+    \item Buscar alternativas de personalização de uma distribuição
+        Linux para a automatização da instalação dos drivers
+        genéricos;
 
     \item Pesquisar diferentes criptomoedas e suas vantagens e
         desvantagens em diferentes hardwares;
@@ -416,7 +417,9 @@ Específicos:
     \item Encontrar as melhores alternativas de softwares em termos de
         praticidade e tempo;
 
-    \item Desenvolver a distribuição;
+    \item Comparar distribuições para a customização;
+
+    \item Customizar uma distribuição;
 
     \item Fazer um comparativo da velocidade de instalação entre a
 distribuição e uma instalação manual.
@@ -441,7 +444,7 @@ lista de descritores.
             \multicolumn{1}{c}{\bfseries Áreas} &
             \multicolumn{1}{c}{\bfseries Descritores} \\
             \midrule
-            Criptomoedas &
+            criptomoedas &
             Mineração; Rigs de mineração; Ethereum; Zcash; Monero;
             Bitcoin; Blockchain; \\
 
@@ -466,129 +469,163 @@ complementar a pesquisa.
 \section{Revisão de Literatura}
 
 % TODO:
-%O CAPÍTULO 2 SUGIRO TER A SEGUINTE ESTRUTURA:
-%2.1 - CRIPTOMOEDAS (aqui você deve escrever sobre: definição,
-%quantas moedas existem, quais são os tipos, todas são de tokens?,
-%existe o smart contract – o que são eles....você deve aprofundar
-%melhor no texto)
-%O LEITOR PRECISA ENTENDER SOBRE AS CRIPTOMOEDAS E AS
-%SUAS ESTRUTURAS E TIPOS
-%2.1.1 – MOEDAS (aqui você iria descrever a ESTRUTURA do BITCOIN,
-%EHTEREUM E MONERO)
 %2.2 - MINERAÇÃO (aqui você deve explicar sobre o funcionamento da
 %rede de maneira mais aprofundada, mostrar uma imagem que mostra
 %a comunicação entre as máquinas, o que as máquinas transmitem
-%uma para as outras?, o são rigs?, o que são e como funcionam os
+%uma para as outras?, oq são rigs?, o que são e como funcionam os
 %pools?, explicar o que é e como funciona o processamento da CPU e
 %GPU, ...aprofundar melhor)
 
-%2.3 – Distribuição Linux (conceitos, tipos, derivações, características
-%principais, inclua as distribuições e os diferenciais, crie um quadro
-%para comparar as distribuições que explicar..)
-
-\subsection{Criptomoedas}
-
-\subsubsection{Definição}\label{cap:definicao}
+\subsection{criptomoedas}
 
 As criptomoedas são um sistema descentralizado e independente de uma
 instituição financeira. Sua facilidade de uso tornou as taxas de
 transações cambiais menores, além de aumentar a velocidade com que
 essas transações eram efetivadas. Isto chamou muito a atenção de
 investidores, o que levou a uma difusão desta tecnologia na nossa
-sociedade \cite{Nakamoto2008, Prado2017}.
+sociedade \cite{Nakamoto2008, Prado2017}. O controle de tokens é feito
+por propriedades matemáticas e não por uma instituição centralizada.
+Cada transação deve ser validada por vários nós \cite{LChicarino}.
+Diferente de um banco, que faz a validação centralizada, sujeita a
+erros.
 
 \begin{comment}
-Uma criptomoeda é um sistema \emph{peer-to-peer} onde o controle da
-moeda é feito por propriedades matemáticas e não por uma instituição
-centralizada. Cada usuário é identificado por uma representação de sua
-chave pública, também referenciada como endereço da carteira
-\cite{Weber2012}. Para que um usuário faça uma transação, é necessário
-que ele: (a) saiba o balanço de sua carteira, que é calculado por meio
-do \emph{Blockchain}; (b) tenha o endereço da carteira de envio; e (c)
-tenha a chave privada de sua carteira.
 
+Uma criptomoeda é um sistema \emph{peer-to-peer} onde  Cada usuário é
+identificado por uma representação de sua chave pública, também
+referenciada como endereço da carteira \cite{Weber2012}. Para que um
+usuário faça uma transação, é necessário que ele: (a) saiba o balanço
+de sua carteira, que é calculado por meio do Blockchain; (b) tenha o
+endereço da carteira de envio; e (c) tenha a chave privada de sua
+carteira.
+
+% TODO: isso no Bitcoin
 Em vez de existir um balanço em uma conta, existe uma lista de
-transações feitas desde o início do sistema, chamada de
-\emph{Blockchain} \cite{Weber2012}. O
-\emph{Blockchain}, também referenciado como ``protocolo de
-confiança'', usa a decentralização de uma instituição financeira como
-uma medida de segurança. Cada transação deve ser validada
-criptograficamente por vários nós de uma rede antes de entrar para o
-\emph{Blockchain} \cite{LChicarino}; diferente de um banco, que faz a
-validação seguindo as suas próprias regras, sujeito a erros.
+transações feitas desde o início do sistema, chamada de Blockchain
+\cite{Weber2012}. O Blockchain, também referenciado como ``protocolo
+de confiança'', usa a decentralização de uma instituição financeira
+como uma medida de segurança. 
 
 \end{comment}
 
-O Bitcoin foi criado em 2008 seu primeiro bloco, também chamado de
+\subsubsection{Moedas}
+
+\subsubsubsection{Bitcoin}\label{cap:definicao-blockchain}
+
+O Bitcoin foi criado em 2008. Seu primeiro bloco, também chamado de
 ``bloco gênesis'' serve como ponto de referência para a criação das
 \emph{alt coins} - moedas alternativas. As moedas alternativas são
 criptomoedas que tem uma implementação diferente quando comparadas ao
-Bitcoin. Existem aproximadamente mais de 800 \emph{alt coins} moedas
-registradas no site Coin Market Cap \cite{Arsov, CoinMarketCap2018}.
-Cada uma dessas moedas foram criadas para aplicações específicas,
-diferentes do Bitcoin.  Suas implementações diferentes de criptomoedas
-são (a) as de tokens e (b) as de contratos inteligentes.
+Bitcoin. 
 
-O Bitcoin serve para transferir tokens, que são a representação de
-algo transferível. Na implementação desta moeda, seus tokens possuem
-valor monetário. Já o Ethereum é uma moeda alternativa que foca na
-implementação de uma linguagem de programação Turing Completa para a
-criação de scripts ou ``contratos inteligentes'' \cite{Narayanan2016}. 
+Existem aproximadamente mais de 800 \emph{alt coins} registradas no
+site Coin Market Cap \cite{Arsov, CoinMarketCap2018}.  De maneira
+geral podem ser classificadas em duas categorias: (a) as de tokens e
+(b) as de contratos inteligentes.  O Bitcoin é uma moeda de tokens.
+Tokens são a representação de algo transferível. Na implementação do
+Bitcoin, seus tokens possuem valor monetário.  
 
-O contrato inteligente é um programa que é executado no Blockchain
-para executar regras de negócio específicas. Contratos inteligentes
-permitem que qualquer aplicação possa ser implementada em uma mesma
-moeda. Uma boa analogia de um contrato inteligente na prática é um
-contrato para a prestação de serviços de uma empresa fictícia.
+Em vez de existir um balanço em uma conta, existe uma lista de
+transações feitas desde o início do sistema, chamada de Blockchain. O
+Blockchain é um histórico em formato de lista encadeada de transações
+\cite{Weber2012}. Cada parte deste histórico é chamado de bloco e deve
+ser validado para ser adicionado no Blockchain, o processo de
+validação é chamado de mineração \cite{LChicarino}. Os usuários fazem
+a transferência com uma chave pública e privada. Os tokens de um
+endereço de chave pública, chamado de carteira, só pode ser acessado
+pelo seu dono, com uma chave privada.
+
+\begin{figure}[H]
+    \caption{\label{fig:exemplo-bitcoin}Exemplo de uma transferência
+        com Bitcoin.}
+    \begin{center}
+        \includegraphics[width=.7\linewidth]{exemplo-bitcoin.pdf}
+    \end{center}
+    \legend{Fonte: O Autor.}
+\end{figure}
+
+A Figura~\ref{fig:exemplo-bitcoin} exemplifica de maneira resumida uma
+transação em Bitcoin. Alice só pode transferir tokens com sua chave
+privada. Também é necessário que Alice saiba a chave pública
+(carteira) de Bob para fazer a transferência. Assim que a transação de
+Alice estiver validada pelos mineradores, ela estará no Blockchain.
+
+\subsubsubsection{Ethereum}
+
+O Ethereum é uma moeda alternativa que foca na implementação de uma
+linguagem de programação Turing Completa para a criação de scripts ou
+``contratos inteligentes'' \cite{Narayanan2016}. Um contrato
+inteligente é um programa que pode ser executado no Blockchain pelos
+mineradores para suprir regras de negócio específicas. Contratos
+inteligentes permitem que qualquer aplicação possa ser implementada em
+uma mesma moeda. Uma boa analogia de um contrato inteligente na
+prática é um contrato para a prestação de serviços de uma empresa
+fictícia.
 
 \begin{figure}[H]
     \caption{\label{fig:contratos-inteligentes}Exemplo de um contrato
-    inteligente.}
+    inteligente em Ethereum.}
     \begin{center}
-        \includegraphics[width=.6\linewidth]{contratos-inteligentes.png}
+        \includegraphics[width=.6\linewidth]{contratos-inteligentes.pdf}
     \end{center}
     \legend{Fonte: O Autor.}
 \end{figure}
 
 A empresa primeiro deve criar um programa para ser executado no
-Blockchain, na Figura~\ref{fig:contratos-inteligentes}, a flecha em
+Blockchain. Na Figura~\ref{fig:contratos-inteligentes}, a flecha em
 verde é o começo do contrato. O serviço de TV custa 10 ether (token do
-ethereum), portanto se Bob pagou 10 ether, ele recebe o serviço, já
+Ethereum), portanto se Bob pagou 10 ether, ele recebe o serviço, já
 Alice que pagou somente 1, não recebe o serviço de TV\@. Essa é uma
 visão abstrata de contratos inteligentes, já que sua implementação na
 prática possui maior complexidade \cite{Narayanan2016}.
 
+\subsubsubsection{Monero}
 
-\subsubsection{Moedas}
-% Descrever como o Monero surgiu e o que ele é
-% Explicar como o monero tem um algoritmo de mineração que evita o
-% uso por chips ASIC e FPGAs.
-% TODO: Terminar esse parágrafo
+A criptomoeda Monero é uma moeda de tokens e visa o anonimato das
+transações e de seus usuários para evitar o rastreamento de
+informações. Para que uma transação não seja rastreável, um endereço
+de destino temporário, que não possui ligação com o endereço do
+destinatário é criado. Este endereço temporário só é utilizado uma vez
+e outros usuários da rede não podem descobrir quem é o remetente de
+determinado token, já que a tecnologia de \emph{ring signatures} é
+utilizada.
 
-O Monero usa um algoritmo de validação que dificulta a mineração por
-chips especializados, como ASICs e FPGAs.  Tornando a mineração
-somente lucrativa em CPUs ou GPUs \cite{Weber2012}. Os Rigs de
-Mineração são valorizados dessa forma, já que o algoritmo de mineração
-em uma GPU é muito mais eficiente que em um chip ASIC\@.
+\begin{figure}[H]
+    \caption{\label{fig:exemplo-monero}Exemplo de uma transação segura
+        utilizando a criptomoeda Monero.}
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{exemplo-monero.pdf}
+    \end{center}
+    \legend{Fonte: O Autor.}
+\end{figure}
 
-\subsubsection{Ethereum}
-% Descrever como o Ethereum surgiu e o que ele é
-% Explicar como o Ethereum também usa um algoritmo de mineração que
-% evita o uso por chips ASIC e FPGAs.
+Um \emph{ring signature} funciona com um conjunto de usuários. Quando
+Alice envia 1 monero na Figura~\ref{fig:exemplo-monero}, cópias desta
+transação são feitas para que os mineradores descubram a \emph{key
+image} e validem a transação somente uma vez, evitando um gasto duplo.
+Bob só sabe se foi realmente Alice que enviou os Tokens se ela contar
+a ele, já que o Blockchain não possui o remetente real da transação
+\cite{Monero2017, MoneroHow2018}.
+
+O Monero usa um algoritmo de validação em seu Blockchain que dificulta
+a mineração por chips especializados, como ASICs.  Tornando a
+mineração somente lucrativa em CPUs ou GPUs \cite{Weber2012}. Os Rigs
+de Mineração são valorizados dessa forma, já que o algoritmo de
+mineração em uma GPU é muito mais eficiente que em um chip ASIC\@.
 
 \subsection{Mineração}
 
-Como dito anteriormente, na Seção~\ref{cap:definicao}, o
-\emph{Blockchain} serve para validar uma transação. Somente existe uma
-maneira de confirmar uma transação no \emph{Blockchain}: resolvendo um
-``quebra cabeças'' criptográfico \cite{Weber2012}. Nessa resolução
-criptográfica, um hash SHA-256 bits de um dado deve ser menor que um
-número específico \cite{Dev2014}. Um hash, na linguagem comum, é um
-valor único para um determinado dado.  Confirmar uma transação nada
-mais é que descobrir este hash se utilizando da força bruta
-\cite{Arsov}.
+Como dito anteriormente, na Seção~\ref{cap:definicao-blockchain}, o
+Blockchain serve para validar transações. Somente existe uma maneira
+de confirmar uma transação no Blockchain: resolvendo um ``quebra
+cabeças'' criptográfico \cite{Weber2012}. Nessa resolução
+criptográfica no Bitcoin, um hash SHA-256 bits de um dado deve ser
+menor que um número específico \cite{Dev2014}. Um hash, na linguagem
+comum, é um valor único para um determinado dado.  Confirmar uma
+transação nada mais é que descobrir este hash se utilizando da força
+bruta \cite{Arsov}.
 
-A mineração serve para atualizar o \emph{Blockchain}, pelo qual nós
+A mineração serve para atualizar o Blockchain, pelo qual nós
 especiais, chamados de mineradores; se encarregam em trabalhar de
 maneira distribuída para fazer a validação de um conjunto de
 transações. O conjunto de transações é definido como um bloco. Toda
@@ -601,24 +638,22 @@ cabeçalhos de blocos novos são baseados no de blocos anteriores.
 Portanto, para que o sistema seja atacado e corrompido, ou seja, para
 que uma transação seja mudada manualmente, é necessário que o atacante
 recalcule todos os blocos que foram gerados a partir do bloco que ele
-quer modificar. Isto somente é possível se pelo menos $51\%$ do poder
-computacional da rede inteira estiver nas mãos de quem a ataca
-\cite{Nakamoto2008, Dev2014}.
+quer modificar. Isto no Bitcoin somente é possível se pelo menos
+$51\%$ do poder computacional da rede inteira estiver nas mãos de quem
+a ataca \cite{Nakamoto2008, Dev2014}.
 
 A prova de trabalho também é um mecanismo de segurança. Diferentes
 criptomoedas utilizam diversos algoritmos para fazer as validações.
 Logo, tornam-se necessários \emph{hardwares} específicos para que a
-mineração seja feita. No Capítulo XXX apresentam-se os hardwares e
-algoritmos mais comumente utilizados para este fim.
-% TODO: Referência cruzada aqui
+mineração seja feita.
 
 Como cada algoritmo tem suas especialidades, foram criados chips ASIC
 para mineração de criptomoedas. Um chip \emph{Application-Specific
 Integrated Circuit} - ASIC é um circuito desenvolvido com um propósito
 único \cite{Smith1997}. A mineração do Bitcoin atualmente só é
-lucrativa com chips ASIC\@, já o Monero, outra criptomoeda, utiliza o
-algoritmo CryptoNightV7, especialmente desenvolvido para dificultar a
-utilização de chips ASIC\@ \cite{NiceHash2018}.
+lucrativa com chips ASIC\@. O Monero utiliza o algoritmo
+CryptoNightV7, especialmente desenvolvido para dificultar a utilização
+de chips ASIC\@ \cite{NiceHash2018}.
 
 \subsubsection{Rigs de Mineração}
 
@@ -649,8 +684,8 @@ hashes por segundo.
 A mineração também pode ser feita em conjunto com os \emph{Pools} de
 mineração. Onde um conjunto de mineradores trabalham em uma mesma
 solução de um bloco. Quando solucionado, a recompensa é dividida
-proporcionalmente; baseado na quantidade de trabalho feito, entre
-todos os nodes da rede \cite{Weber2012}.
+proporcionalmente pela quantidade de trabalho feito entre todos os
+nodes da rede \cite{Weber2012}.
 
 \emph{Pools} de mineração são vantajosos pelo fato de que independente
 de quem solucione o bloco, a recompensa é dividida baseado no trabalho
@@ -672,11 +707,10 @@ rede \cite{Nunes2009}.
 A atualização é feita de forma automática pela rede. Esta
 característica é um requisito extremamente importante para a mineração
 de criptomoedas, considerando que mudanças de implementação no sistema
-são atualizadas automaticamente. No capítulo XXX apresentam-se
-distribuições que são \emph{rolling release}, ou seja, que não
-precisam de uma nova instalação para mudarem de versão
-\cite{Nunes2009, ArchWiki2018a}.
-% TODO: Referência cruzada aqui
+são atualizadas automaticamente. No
+Capítulo~\ref{cap:distribuicoes-linux} apresentam-se distribuições que
+são \emph{rolling release}, ou seja, que não precisam de uma nova
+instalação para mudarem de versão \cite{Nunes2009, ArchWiki2018a}.
 
 \subsubsection{Distribuições Linux}\label{sec:distribuicoes-linux}
 
@@ -712,7 +746,8 @@ antes de a instalar em um disco físico. Uma distribuição Linux em modo
 portátil usa uma mídia portátil para persistir arquivos pessoais.
 
 \begin{figure}[H]
-    \caption{\label{fig:exemplo-distro}Uma distribuição Arch Linux
+    \caption[Uma distribuição Arch Linux
+        instalada de maneira portátil]{\label{fig:exemplo-distro}Uma distribuição Arch Linux
         instalada de maneira portátil. O \emph{boot} foi feito com um HD
     externo em um computador pessoal.}
     \begin{center}
@@ -727,7 +762,8 @@ apresentadas informações gerais de hardware/software e a
 estrutura das partições, na qual \code{/dev/sda} representa o HD
 externo e \code{/dev/sdb} representa o HD interno do Desktop.
 
-\subsubsection{Criação de Uma Distribuição Linux}
+\subsubsection{Criação de Uma Distribuição
+Linux}\label{cap:distribuicoes-linux}
 
 % TODO: Ver a regra de citação direta na biblioteca
 ``A criação  de  distribuições  Linux pode fazer-se, a grosso modo,
@@ -748,7 +784,7 @@ o Respin \cite{Respin2018} e o SuseStudio, que foi descontinuado.
 
 
 \begin{figure}[H]
-    \caption{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
+    \caption[Gráfico da hierarquia do Arch Linux]{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
     Linux gerado com a ferramenta gnuclad \cite{Loli2017}.}
     \begin{center}
         \includegraphics[width=.9\linewidth]{timeline_arch.pdf}
@@ -770,7 +806,9 @@ Manjaro foi criada em $2011$ e é baseado no Arch. Já o AL-AMLUG foi
 criado em $2003$ e mudou o nome para Archie que foi descontinuado em
 $2006$.
 
-\subsubsection{Debian}
+\subsubsection{Distribuições Linux}
+
+\subsubsubsection{Debian}
 
 O Debian é uma distribuição Linux que visa a estabilidade e código
 aberto, com mais de $51.000$ pacotes pré compilados em seus
@@ -787,7 +825,7 @@ um pacote entre nos repositórios oficiais do Debian, é necessário que
 ele siga regras rigorosas de software livre. Repositórios não oficiais
 devem ser adicionados manualmente pelo usuário.
 
-\subsubsection{Ubuntu}
+\subsubsubsection{Ubuntu}
 
 Como o Debian não é muito convidativo para usuários sem um
 conhecimento técnico moderado, em $2004$, o Ubuntu surgiu como uma
@@ -807,7 +845,7 @@ Os gerenciadores de pacotes do Ubuntu são iguais ao Debian e a
 utilização de um repositório não oficial exige que o usuário o
 adicione manualmente \cite{UbuntuWiki2018}.
 
-\subsubsection{Fedora}
+\subsubsubsection{Fedora}
 
 Tendo suas raízes no Red Hat, o Fedora é uma distribuição criada para
 facilitar a vida do usuário. Suas duas versões, (a) a
@@ -820,7 +858,7 @@ Seu gerenciador de pacotes é o \code{rpm}, o mesmo do Red Hat. Como no
 Debian e Ubuntu, repositórios não oficiais devem ser adicionados
 manualmente \cite{FedoraProject2018b}.
 
-\subsubsection{Arch}
+\subsubsubsection{Arch}
 
 O Arch Linux é uma distribuição que visa a versatilidade e
 estabilidade. Destinada a usuários mais experientes, no momento de
@@ -859,7 +897,7 @@ Essa extração dos binários é feita automaticamente pelo \code{pacman}.
 Em qualquer momento o usuário pode optar por remover o programa, já
 que o gerenciador se encarrega deste trabalho.
 
-\subsubsection{Gentoo}
+\subsubsubsection{Gentoo}
 
 Todas as distribuições discutidas anteriormente são binárias, isto
 quer dizer que o Kernel, o programa que faz a interface entre o
@@ -883,7 +921,6 @@ instalação exige um estudo mais aprofundado.
 \subsubsection{Características Relevantes em Distribuições Linux Para Mine-
 ração de criptomoedas}
 
-% TODO: Refazer este parágrafo
 Uma distribuição Linux deve ter as seguintes características no seu
 gerenciador de pacotes, (a) os programas disponíveis devem ser
 suficientemente estáveis, (b) a instalação e atualização deve ser
@@ -907,7 +944,7 @@ Proposta do Trabalho}
     \caption{\label{table:quadro-comparativo}Quadro Comparativo Entre
     Distribuições Linux}
     \makebox[\textwidth]{%
-        \begin{tabularx}{1\textwidth}{>{\raggedright}p{3cm}cccccc}
+        \begin{tabularx}{1\textwidth}{>{\raggedright}p{2.3cm}cccccc}
             \toprule
             \multicolumn{1}{l}{\bfseries Distribuição} &
             \multicolumn{1}{c}{Debian} &
@@ -941,7 +978,7 @@ instalação nativa de alguns drivers proprietários.
 
 O Ubuntu por ser para um uso mais genérico possui muitos pacotes já
 instalados em sua ISO\@. Isso é um problema para a mineração de
-Criptomoedas já que a quantidade de pacotes interfere no desempenho do
+criptomoedas já que a quantidade de pacotes interfere no desempenho do
 sistema. 
 
 O Arch Linux e seu sistema gerenciador de pacotes se encaixam melhor
