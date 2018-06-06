@@ -475,14 +475,16 @@ lista de descritores.
     }
 \end{table}
 
-A seleção de trabalhos científicos foi feita se baseando no
+A seleção de trabalhos científicos foi feita se baseando na
 identificação dos descritores no título ou nos descritores do
 trabalho, totalizando $38$ trabalhos.  Após a seleção, foi feita a
 leitura destes trabalhos para avaliar qual o grau de relação com a
 pesquisa. No total, foram selecionados $34$ trabalhos para
 complementar a pesquisa.
 
+\begin{comment}
 \subsection{Estrutura}
+\end{comment}
 
 \section{Revisão de Literatura}
 
@@ -1003,6 +1005,45 @@ O Arch Linux e seu sistema gerenciador de pacotes se encaixam melhor
 para o intuito de mineração de criptomoedas, pois a quantidade de
 pacotes é extensa e a atualização é alta, fator necessário para a
 instalação dos mais variados mineradores de criptomoedas.
+
+\section{Resultados Parciais}
+
+\subsection{Protótipo da distribuição Munix}
+
+A distribuição Munix é baseada na distribuição Arch Linux. Tem o
+intuito de minerar criptomoedas e atualmente detecta placas NVidia com
+suporte CUDA\@, utilizando o driver proprietário mais atualizado. O
+programa \code{ccminer} vem instalado e em modo live é possível
+minerar Monero na distribuição. A criação da distribuição é feita por
+meio da ferramenta \code{archiso}.
+
+\begin{figure}[H]
+    \caption{\label{fig:boot-munix}Menu de boot da ISO\@ Munix.}
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{munix-boot.png}
+    \end{center}
+    \legend{Fonte: O Autor.}
+\end{figure}
+
+A Figura~\ref{fig:boot-munix} mostra a distribuição Munix no programa
+VirtualBox, seu menu de boot tem as opções a mais parar listar o
+hardware e testar a memória do computador, úteis para se ter uma
+informação prévia sobre o hardware antes da instalação.
+
+\begin{figure}[H]
+    \caption{\label{fig:uname-munix}Uname do Munix.}
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{munix-uname.png}
+    \end{center}
+    \legend{Fonte: O Autor.}
+\end{figure}
+
+A Figura~\ref{fig:uname-munix} mostra informações do sistema como o
+nome da distribuição e o número de versão do kernel
+(\code{4.16.13-1-ARCH}). É importante notar que o kernel do Arch Linux
+possui patches específicos para manter a estabilidade, logo, a versão
+do kernel do Munix possui o sufixo \code{-ARCH}.
+
 
 % ----------------------------------------------------------
 % Referências bibliográficas (nome do arquivo de referencias, sem o
