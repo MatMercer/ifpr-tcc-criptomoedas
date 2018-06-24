@@ -256,8 +256,9 @@ TSWLatexianTemp*
 
 # End of https://www.gitignore.io/api/git,latex,libreoffice,microsoftoffice
 
-# Don't ignore PDF in imagens directory
+# Don't ignore PDF and EPS in imagens directory
 !img/*.pdf
+!img/*.eps
 
 # Ignore the build folder
 build
