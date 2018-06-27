@@ -28,7 +28,7 @@
 
 % Apresentações em widescreen. Outros valores possíveis: 1610, 149, 54, 43 e 32.
 % Por padrão, as apresentações são no formato 4:3 (sem o aspectratio).
-\documentclass[aspectratio=169]{beamer}	 	
+    \documentclass[aspectratio=43]{beamer}	 	
 
 \usetheme{PaloAlto}
 \usecolortheme{spruce}
@@ -98,6 +98,7 @@
 \usepackage{pgf}  
 \usepackage{tikz}
 \usepackage[default]{lato}
+\usepackage{tabularx}
 % ---
 
 % --- Informações do documento ---
@@ -147,17 +148,17 @@
 
     \item Buscar alternativas de personalização de uma distribuição
         Linux para a automatização da instalação dos drivers
-        genéricos;\pause
+        genéricos;
 
     \item Pesquisar diferentes criptomoedas e suas vantagens e
-        desvantagens em diferentes hardwares;\pause
+        desvantagens em diferentes hardwares;
 
     \item Encontrar as melhores alternativas de softwares em termos de
-        praticidade e tempo;\pause
+        praticidade e tempo;
 
-    \item Comparar distribuições para a customização;\pause
+    \item Comparar distribuições para a customização;
 
-    \item Customizar uma distribuição;\pause
+    \item Customizar uma distribuição;
 
     \item Fazer um comparativo da velocidade de instalação entre a
 distribuição e uma instalação manual.
@@ -176,23 +177,23 @@ distribuição e uma instalação manual.
 %\end{block}
 \begin{itemize}
     \item Criptomoedas são um sistema descentralizado
-        \cite{Prado2017}\pause
+        \cite{Prado2017}
     
-    \item A maioria implementa a transferência de \emph{tokens}\pause
+    \item A maioria implementa a transferência de \emph{tokens}
 
     \item A validação destas transferências é feita por propriedades
-        matemáticas \cite{LChicarino}\pause
+        matemáticas \cite{LChicarino}
 
     \item Esta validação é independente de uma instituição financeira
-        \cite{Nakamoto2008}\pause
+        \cite{Nakamoto2008}
 
-    \item O Bitcoin é a criptomoeda mais utilizada atualmente\pause
+    \item O Bitcoin é a criptomoeda mais utilizada atualmente
 
     \item Criptomoedas que surgiram após o Bitcoin são denominadas
         \emph{alt coins}
 \end{itemize}
 
-\pause
+
 
 \begin{block}{Curiosidade}
     Existem mais de $800$ \emph{alt coins} registradas no site Coin
@@ -208,17 +209,17 @@ distribuição e uma instalação manual.
     
     \begin{itemize}
         \item Minerar uma criptomoeda que usa uma tecnologia de blockchain
-            nada mais é que continuar as transações\pause
+            nada mais é que continuar as transações
 
         \item Quem minera recebe $N$ tokens por $N$ trabalho
-            feito\pause
+            feito
 
         \item Por existir uma variedade de criptomoedas e hardwares,
-            suas implementações variam\pause
+            suas implementações variam
 
         \item Configurar uma distribuição Linux para fazer a mineração
             de uma criptomoeda requer tempo e um conhecimento técnico
-            moderado\pause
+            moderado
         
         \item Nem sempre a mineração é lucrativa
     \end{itemize}
@@ -234,14 +235,14 @@ distribuição e uma instalação manual.
     \begin{itemize}
         \item Em vez de existir um balanço em uma conta, existe uma lista de
             transações feitas desde o início do sistema
-            \cite{Weber2012}\pause
+            \cite{Weber2012}
 
         \item O Blockchain se a assemelha a um histórico em formato de
-            lista encadeada\pause
+            lista encadeada
 
         \item Cada parte deste bloco (conjunto de transações) deve ser
             validado, esse processo é chamado de mineração
-            \cite{LChicarino}\pause
+            \cite{LChicarino}
 
         \item Usuários são identificados por uma chave pública e
             acessam sua carteira com uma chave privada
@@ -272,10 +273,10 @@ distribuição e uma instalação manual.
     \begin{itemize}
         \item O Ethereum foca na implementação de uma linguagem de
             programação Turing completa para a criação de scripts ou
-            ``contratos inteligentes'' \cite{Narayanan2016}\pause
+            ``contratos inteligentes'' \cite{Narayanan2016}
 
         \item Contratos inteligentes são programas que podem ser
-            executados no Blockchain\pause
+            executados no Blockchain
     \end{itemize}
 
     \begin{block}{Segurança}
@@ -302,10 +303,168 @@ distribuição e uma instalação manual.
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Mineração}
+
+    \begin{itemize}
+        \item O incentivo da mineração é a recompensa
+            \cite{LChicarino}
+
+        \item A prova de trabalho existe para evitar que uma transação
+            aconteça duas vezes
+
+        \item Próximos blocos do blockchain são sempre baseados em
+            blocos anteriores \cite{Nakamoto2008, Dev2014}
+        
+        \item A variedade de algoritmos de mineração permite que
+            alguns chips ASIC's sejam criados \cite{Smith1997}
+
+        \item Algumas criptomoedas implementam algoritmos que
+            dificultam a criação de ASIC's \cite{NiceHash2018}
+
+    \end{itemize}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Rigs de Mineração}
+
+    \begin{itemize}
+        \item Quanto mais poder computacional, mais lucrativa é a
+            mineração (o algoritmo interfere diretamente)
+
+        \item A maioria das criptomoedas permitem a mineração por uma
+            placa gráfica
+
+        \item Um rig de mineração é um sistema computacional que tem
+            como responsabilidade a mineração de uma criptomoeda
+            \cite{BitcoinWiki2015}
+
+        \item A medida utilizada para apresentar o desempenho de um
+            rig de mineração é ``hashes por segundo'' $h/s$
+
+    \end{itemize}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Rigs de Mineração}
+
+    \begin{figure}[H]
+        \caption{\label{fig:rig_mineracao}Um rig de mineração com 13 GPUs
+        NVidia 1060}
+        \begin{center}
+            \includegraphics[width=.2\linewidth]{rig_mineracao.png}
+        \end{center}
+        \legend{Fonte: \url{https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}}
+    \end{figure}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Distribuições Linux}
+
+    \begin{itemize}
+        \item Assim como as criptomoedas, a variedade de distribuições
+            é extensa
+
+        \item Distribuição Linux é uma variação do sistema operacional
+            Linux para um determinado contexto
+
+        \item Uma distribuição Linux pode ser baseada em outra
+
+    \end{itemize}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Hierarquia do Arch Linux}
+
+    \begin{figure}[H]
+        \caption[Gráfico da hierarquia do Arch Linux]{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
+        Linux gerado com a ferramenta gnuclad \cite{Loli2017}.}
+        \begin{center}
+            \includegraphics[width=.65\linewidth]{timeline_arch.pdf}
+        \end{center}
+        \legend{Fonte: O Autor.}
+    \end{figure}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Customização de Distribuições Linux}
+
+    \begin{itemize}
+        \item Essa customização pode ser feita de duas maneiras
+
+        \item Criação com o código fonte ou modificação da existente
+
+        \item A criação com código fonte exige um conhecimento maior
+            em programação de baixo nível
+
+        \item Existem ferramentas gráficas para a criação de
+            distribuições Linux, como o Respin \cite{Respin2018}
+
+    \end{itemize}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\begin{frame}
+    \frametitle{Desenvolvimento}
+    \framesubtitle{Quadro Comparativo Entre Distribuições Linux}
+
+        \small
+        \centering
+        \caption{\label{table:quadro-comparativo}Quadro Comparativo Entre
+        Distribuições Linux}
+            \begin{tabularx}{1\textwidth}{>{\raggedright}p{2cm}cccccc}
+                \toprule
+                \multicolumn{1}{l}{\bfseries Distribuição} &
+                \multicolumn{1}{c}{Debian} &
+                \multicolumn{1}{c}{Ubuntu} &
+                \multicolumn{1}{c}{Fedora} &
+                \multicolumn{1}{c}{Arch} &
+                \multicolumn{1}{c}{Gentoo} \\
+                \midrule
+
+                \textbf{Tamanho da ISO}              & 600MB ou 4.7GB & 1.5GB & 1.5GB & 600MB & 300MB ou 2GB \\
+                \midrule
+                \textbf{Taxa de Atualização}         & Baixa & Média & Alta & Alta & Alta \\
+                \midrule
+                \textbf{Disponibilidade de Pacotes}  & Média & Alta & Alta & Alta & Alta \\
+                \midrule
+                \textbf{Pacotes de Código Fechado}   & Sim & Sim & Parcialmente & Sim & Parcialmente \\
+                \midrule
+                \textbf{Estabilidade dos Pacotes}   & Alta & Alta & Alta & Média & Média \\
+
+                \toprule
+            \end{tabularx}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
 \section{Metodologia}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section{Resultados Parciais}
+
+\begin{frame}
+    \frametitle{Resultados Parciais}
+    \framesubtitle{Protótipo da Distribuição Munix}
+
+    \begin{figure}[H]
+        \caption{\label{fig:boot-munix}Menu de boot da ISO\@ Munix.}
+        \begin{center}
+            \includegraphics[width=.5\linewidth]{munix-boot.png}
+        \end{center}
+    \end{figure}
+
+\end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section{Considerações Finais}
