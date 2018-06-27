@@ -357,7 +357,7 @@ distribuição e uma instalação manual.
         \caption{\label{fig:rig_mineracao}Um rig de mineração com 13 GPUs
         NVidia 1060}
         \begin{center}
-            \includegraphics[width=.2\linewidth]{rig_mineracao.png}
+            \includegraphics[width=.3\linewidth]{rig_mineracao.png}
         \end{center}
         \legend{Fonte: \url{https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}}
     \end{figure}
@@ -383,21 +383,6 @@ distribuição e uma instalação manual.
 % ----------------- NOVO SLIDE --------------------------------
 \begin{frame}
     \frametitle{Desenvolvimento}
-    \framesubtitle{Hierarquia do Arch Linux}
-
-    \begin{figure}[H]
-        \caption[Gráfico da hierarquia do Arch Linux]{\label{fig:hierarquia-arch}Gráfico da hierarquia do Arch
-        Linux gerado com a ferramenta gnuclad \cite{Loli2017}.}
-        \begin{center}
-            \includegraphics[width=.65\linewidth]{timeline_arch.pdf}
-        \end{center}
-        \legend{Fonte: O Autor.}
-    \end{figure}
-\end{frame}
-
-% ----------------- NOVO SLIDE --------------------------------
-\begin{frame}
-    \frametitle{Desenvolvimento}
     \framesubtitle{Customização de Distribuições Linux}
 
     \begin{itemize}
@@ -415,63 +400,17 @@ distribuição e uma instalação manual.
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
-\begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Quadro Comparativo Entre Distribuições Linux}
-
-        \small
-        \centering
-        \caption{\label{table:quadro-comparativo}Quadro Comparativo Entre
-        Distribuições Linux}
-            \begin{tabularx}{1\textwidth}{>{\raggedright}p{2cm}cccccc}
-                \toprule
-                \multicolumn{1}{l}{\bfseries Distribuição} &
-                \multicolumn{1}{c}{Debian} &
-                \multicolumn{1}{c}{Ubuntu} &
-                \multicolumn{1}{c}{Fedora} &
-                \multicolumn{1}{c}{Arch} &
-                \multicolumn{1}{c}{Gentoo} \\
-                \midrule
-
-                \textbf{Tamanho da ISO}              & 600MB ou 4.7GB & 1.5GB & 1.5GB & 600MB & 300MB ou 2GB \\
-                \midrule
-                \textbf{Taxa de Atualização}         & Baixa & Média & Alta & Alta & Alta \\
-                \midrule
-                \textbf{Disponibilidade de Pacotes}  & Média & Alta & Alta & Alta & Alta \\
-                \midrule
-                \textbf{Pacotes de Código Fechado}   & Sim & Sim & Parcialmente & Sim & Parcialmente \\
-                \midrule
-                \textbf{Estabilidade dos Pacotes}   & Alta & Alta & Alta & Média & Média \\
-
-                \toprule
-            \end{tabularx}
-\end{frame}
-
-% ----------------- NOVO SLIDE --------------------------------
 \section{Metodologia}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section{Resultados Parciais}
-
-\begin{frame}
-    \frametitle{Resultados Parciais}
-    \framesubtitle{Protótipo da Distribuição Munix}
-
-    \begin{figure}[H]
-        \caption{\label{fig:boot-munix}Menu de boot da ISO\@ Munix.}
-        \begin{center}
-            \includegraphics[width=.5\linewidth]{munix-boot.png}
-        \end{center}
-    \end{figure}
-
-\end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section{Considerações Finais}
 
 % ----------------- NOVO SLIDE --------------------------------
 
-\section{Referências}
+% \section{Referências}
 
 % --- O comando \allowframebreaks ---
 % Se o conteúdo não se encaixa em um quadro, a opção allowframebreaks instrui 
@@ -479,7 +418,7 @@ distribuição e uma instalação manual.
 % mantendo o frametitle do primeiro quadro (dado como argumento) e acrescentando 
 % um número romano ou algo parecido na continuação.
 
-\begin{frame}[allowframebreaks]{Referências}
+\begin{frame}<presentation:0>[noframenumbering]
 \bibliography{referencias}
 \end{frame}
 
