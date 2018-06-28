@@ -28,7 +28,7 @@
 
 % Apresentações em widescreen. Outros valores possíveis: 1610, 149, 54, 43 e 32.
 % Por padrão, as apresentações são no formato 4:3 (sem o aspectratio).
-    \documentclass[aspectratio=43]{beamer}	 	
+\documentclass[aspectratio=43]{beamer}	 	
 
 \usetheme{PaloAlto}
 \usecolortheme{spruce}
@@ -38,6 +38,7 @@
 \definecolor{ifprgreen}{RGB}{0,61,30}
 \definecolor{ifprlightgreen}{RGB}{139,239,67}
 \definecolor{ifprred}{RGB}{212,0,0}
+\definecolor{sectiongreen}{RGB}{140,186,163}
 
 % Customizações de Cores: fg significa cor do texto e bg é cor do fundo
 %\setbeamercolor{normal text}{fg=black}
@@ -51,6 +52,8 @@
 \setbeamercolor*{item}{fg=ifprgreen}
 \setbeamercolor{section in toc}{fg=black}
 \setbeamercolor{caption name}{fg=black}
+\setbeamercolor{subsection in sidebar}{fg=white}
+\setbeamercolor{subsection in sidebar shaded}{fg=sectiongreen}
 
 \setbeamertemplate{caption}[numbered]
 
@@ -170,90 +173,86 @@ distribuição e uma instalação manual.
 \section{Introdução}
 \begin{frame}
 \frametitle{Introdução}
-\framesubtitle{Definição e Contexto das Criptomoedas}
+\framesubtitle{Contexto Geral das Criptomoedas}
 
 %\begin{block}{Título}
 % Este modelo foi preparado como uma aplicação do uso do pacote abnTeX2 com o Beamer.
 %\end{block}
 \begin{itemize}
-    \item Criptomoedas são um sistema descentralizado
-        \cite{Prado2017}
-    
-    \item A maioria implementa a transferência de \emph{tokens}
+    \item O \textbf{enfraquecimento do dólar} ajudou o advento das
+        criptomoedas 
 
-    \item A validação destas transferências é feita por propriedades
-        matemáticas \cite{LChicarino}
+    \item As transferências \textbf{não dependem de uma instituição
+        terceira}
 
-    \item Esta validação é independente de uma instituição financeira
-        \cite{Nakamoto2008}
+    \item Em 2015, \textbf{mais de cem mil nós} estavam minerando
+        Bitcoin 
 
-    \item O Bitcoin é a criptomoeda mais utilizada atualmente
+    \item Existem \textbf{mais de 800 criptomoedas} cadastradas no site Coin
+        Market Cap 
 
-    \item Criptomoedas que surgiram após o Bitcoin são denominadas
-        \emph{alt coins}
 \end{itemize}
 
-
-
-\begin{block}{Curiosidade}
-    Existem mais de $800$ \emph{alt coins} registradas no site Coin
-    Market Cap \cite{Arsov, CoinMarketCap2018}.
-\end{block}
-
-\end{frame}
-
-% ----------------- NOVO SLIDE --------------------------------
-\begin{frame}
-    \frametitle{Introdução}
-    \framesubtitle{Mineração e as Dificuldades na sua Configuração}
-    
-    \begin{itemize}
-        \item Minerar uma criptomoeda que usa uma tecnologia de blockchain
-            nada mais é que continuar as transações
-
-        \item Quem minera recebe $N$ tokens por $N$ trabalho
-            feito
-
-        \item Por existir uma variedade de criptomoedas e hardwares,
-            suas implementações variam
-
-        \item Configurar uma distribuição Linux para fazer a mineração
-            de uma criptomoeda requer tempo e um conhecimento técnico
-            moderado
-        
-        \item Nem sempre a mineração é lucrativa
-    \end{itemize}
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section[Desenvolvi\ldots]{Desenvolvimento}
+\subsection{Mineração}
 
 \begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{O Bitcoin e o Blockchain}
+    \frametitle{Mineração}
+    \framesubtitle{Recompensa e Prova de Trabalho}
     
     \begin{itemize}
-        \item Em vez de existir um balanço em uma conta, existe uma lista de
-            transações feitas desde o início do sistema
-            \cite{Weber2012}
+        \item Quem minera recebe $N$ tokens pelo \textbf{trabalho} feito
+            
+        \item Minerar é \textbf{validar transações} no Blockchain
 
-        \item O Blockchain se a assemelha a um histórico em formato de
-            lista encadeada
+        \item Os \textbf{nós na rede concorrem} para descobrir um número cujo o
+            hash SHA-256 possui $N$ zeros
 
-        \item Cada parte deste bloco (conjunto de transações) deve ser
-            validado, esse processo é chamado de mineração
-            \cite{LChicarino}
+        \item Os blocos são encadeados, \textbf{imutáveis} e
+            \textbf{distribuídos}. ``corrente de blocos'' 
 
-        \item Usuários são identificados por uma chave pública e
-            acessam sua carteira com uma chave privada
-        
+        \item \textbf{Prova de trabalho}
     \end{itemize}
 \end{frame}
 
-% ----------------- NOVO SLIDE --------------------------------
+
 \begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Transação de Bitcoin Resumida}
+    \frametitle{Mineração}
+    \framesubtitle{Visão Geral do Blockchain}
+    
+    \begin{figure}[H]
+        \caption{\label{fig:blockchain-hash}Gráfico da visão geral
+        do Blockchain.}
+        \begin{center}
+            \includegraphics[width=1\linewidth]{blockchain-hash.eps}
+        \end{center}
+        Fonte: Adaptação de \cite{Nakamoto2008}
+    \end{figure}
+\end{frame}
+
+% ----------------- NOVO SLIDE --------------------------------
+\subsection{Transações}
+
+\begin{frame}
+    \frametitle{Transações}
+    \framesubtitle{Usuários e Balanço}
+    
+    \begin{itemize}
+        \item Usuários são identificados com uma chave pública e
+            acessam sua carteira com sua chave privada
+
+        \item No Bitcoin o balanço é calculado pela lista de
+            transações no Blockchain
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Transações}
+    \framesubtitle{Transação de Bitcoin}
     
     \begin{figure}[H]
         \caption{\label{fig:exemplo-bitcoin}Exemplo de uma transferência
@@ -266,36 +265,35 @@ distribuição e uma instalação manual.
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
+\subsection{Contratos Inteligentes}
+
 \begin{frame}
-    \frametitle{Desenvolvimento}
+    \frametitle{Contratos Inteligentes}
     \framesubtitle{Ethereum e Contratos Inteligentes}
     
     \begin{itemize}
-        \item O Ethereum foca na implementação de uma linguagem de
-            programação Turing completa para a criação de scripts ou
-            ``contratos inteligentes'' \cite{Narayanan2016}
+        \item Contratos inteligentes são scripts que podem ser
+            colocados no Blockchain
 
-        \item Contratos inteligentes são programas que podem ser
-            executados no Blockchain
+        \item São \textbf{imutáveis}, \textbf{distribuídos} e
+            \textbf{não necessitam de uma instituição terceira para
+            serem validados}
+
+        \item Essa validação tem uma taxa, quanto mais rápida, mais
+            cara, quem recebe esta taxa são os mineradores
+    
     \end{itemize}
-
-    \begin{block}{Segurança}
-        As criptomoedas permitem a transferência de tokens de maneira
-        extremamente segura. Contratos inteligentes permitem que
-        qualquer aplicação possa ser implementada com o proveito dessa
-        segurança.
-    \end{block}
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \begin{frame}
-    \frametitle{Desenvolvimento}
+    \frametitle{Contratos Inteligentes}
     \framesubtitle{Exemplo de Contrato Inteligente em Ethereum}
 \begin{figure}[H]
     \caption{\label{fig:contratos-inteligentes}Exemplo de um contrato
     inteligente em Ethereum.}
     \begin{center}
-        \includegraphics[width=.5\linewidth]{contratos-inteligentes.pdf}
+        \includegraphics[width=.5\linewidth]{contratos-inteligentes.eps}
     \end{center}
     Fonte: O Autor.
 \end{figure}
@@ -304,54 +302,38 @@ distribuição e uma instalação manual.
 
 % ----------------- NOVO SLIDE --------------------------------
 \begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Mineração}
+    \frametitle{Contratos Inteligentes}
+    \framesubtitle{Exemplo de Código de um Contrato Inteligente}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{contrato-inteligente-tv.png}
+    \end{center}
+    Fonte: O Autor.
+\end{figure}
 
-    \begin{itemize}
-        \item O incentivo da mineração é a recompensa
-            \cite{LChicarino}
-
-        \item A prova de trabalho existe para evitar que uma transação
-            aconteça duas vezes
-
-        \item Próximos blocos do blockchain são sempre baseados em
-            blocos anteriores \cite{Nakamoto2008, Dev2014}
-        
-        \item A variedade de algoritmos de mineração permite que
-            alguns chips ASIC's sejam criados \cite{Smith1997}
-
-        \item Algumas criptomoedas implementam algoritmos que
-            dificultam a criação de ASIC's \cite{NiceHash2018}
-
-    \end{itemize}
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
+\subsection{Rigs de Mineração}
+
 \begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Rigs de Mineração}
+    \frametitle{Rigs de Mineração}
+    \framesubtitle{Poder Computacional e Rigs de Mineração}
 
     \begin{itemize}
-        \item Quanto mais poder computacional, mais lucrativa é a
+        \item Quanto \textbf{mais poder computacional, mais lucrativa} é a
             mineração (o algoritmo interfere diretamente)
 
-        \item A maioria das criptomoedas permitem a mineração por uma
-            placa gráfica
-
-        \item Um rig de mineração é um sistema computacional que tem
-            como responsabilidade a mineração de uma criptomoeda
-            \cite{BitcoinWiki2015}
-
         \item A medida utilizada para apresentar o desempenho de um
-            rig de mineração é ``hashes por segundo'' $h/s$
+            rig de mineração é ``\textbf{hashes por segundo}'' $h/s$
 
     \end{itemize}
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Rigs de Mineração}
+    \frametitle{Rigs de Mineração}
+    \framesubtitle{Rig de Mineração com 13 GPUs}
 
     \begin{figure}[H]
         \caption{\label{fig:rig_mineracao}Um rig de mineração com 13 GPUs
@@ -364,49 +346,84 @@ distribuição e uma instalação manual.
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
+\subsection{Distribuições Linux}
 \begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Distribuições Linux}
+    \frametitle{Distribuições Linux}
+    \framesubtitle{Contexto e Vantagens}
 
     \begin{itemize}
         \item Assim como as criptomoedas, a variedade de distribuições
             é extensa
 
-        \item Distribuição Linux é uma variação do sistema operacional
-            Linux para um determinado contexto
-
         \item Uma distribuição Linux pode ser baseada em outra
 
-    \end{itemize}
-\end{frame}
-
-% ----------------- NOVO SLIDE --------------------------------
-\begin{frame}
-    \frametitle{Desenvolvimento}
-    \framesubtitle{Customização de Distribuições Linux}
-
-    \begin{itemize}
-        \item Essa customização pode ser feita de duas maneiras
-
-        \item Criação com o código fonte ou modificação da existente
-
-        \item A criação com código fonte exige um conhecimento maior
-            em programação de baixo nível
-
-        \item Existem ferramentas gráficas para a criação de
-            distribuições Linux, como o Respin \cite{Respin2018}
-
+        \item Seu uso possibilida \textbf{maior desempenho na
+            mineração}
+    
     \end{itemize}
 \end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section{Metodologia}
+\begin{frame}
+    \frametitle{Metodologia}
+    \framesubtitle{Modelo de Prototipação Evolucionário}
+
+    \begin{itemize}
+        \item Planejamento
+
+        \item Programação
+
+        \item Validação
+
+        \item Refinamento
+
+    \end{itemize}
+\end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 \section{Resultados Parciais}
 
+\begin{frame}
+    \frametitle{Resultados Parciais}
+    \framesubtitle{Distribuição Munix}
+
+    \begin{itemize}
+        \item Criação da distribuição Munix (\emph{Mining Unix}) 
+
+        \item A distribuição já detecta placas gráficas NVidia e
+            minera Monero
+
+        \item A ferramenta \code{archiso} é utilizada para a criação
+            baseada no Arch Linux
+
+        \item Foram feitos comparativos entre as distribuições e
+            Criptomoedas
+            
+        \item O desempenho mostrou resultados positivos sobre a
+            distribuição
+
+    \end{itemize}
+\end{frame}
+
+
 % ----------------- NOVO SLIDE --------------------------------
 \section{Considerações Finais}
+
+\begin{frame}
+    \frametitle{Considerações Finais}
+    \framesubtitle{Melhoria da Distribuição e Trabalho}
+
+    \begin{itemize}
+        \item Dar suporte a novas criptomoedas
+
+        \item Criar um instalador para a distribuição
+
+        \item Estudar mais a fundo as criptomoedas e
+            distribuições Linux
+
+    \end{itemize}
+\end{frame}
 
 % ----------------- NOVO SLIDE --------------------------------
 

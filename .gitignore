@@ -260,6 +260,9 @@ TSWLatexianTemp*
 !img/*.pdf
 !img/*.eps
 
+# Converted eps files
+img/*eps-converted-to.pdf
+
 # Ignore the build folder
 build
 
