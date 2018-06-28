@@ -62,11 +62,11 @@
 \makeatother
 
 \makeatletter
-  \setbeamertemplate{sidebar \beamer@sidebarside}
+\makeatletter
+  \setbeamertemplate{sidebar \beamer@sidebarside}%{sidebar theme}
   {
     \beamer@tempdim=\beamer@sidebarwidth%
     \advance\beamer@tempdim by -6pt%
-    \vskip4em%
     \insertverticalnavigation{\beamer@sidebarwidth}%
     \vfill
     \ifx\beamer@sidebarside\beamer@lefttext%
@@ -75,15 +75,7 @@
       \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
       \vskip2pt%
     \fi%
-  }%
-
-  \ifx\beamer@sidebarside\beamer@lefttext%
-    \defbeamertemplate*{sidebar right}{sidebar theme}
-    {%
-      \vfill%
-      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
-      \vskip2pt}
-  \fi
+}%
 \makeatother
 
 % ---
@@ -106,7 +98,7 @@
 
 % --- Informações do documento ---
 \title{Automatização de Mineração de Criptomoedas Com Distribuição Linux}
-\author{Mateus Bittencourt Mercer \\ Prof\@. Dr\@. Rodolfo Barriviera}
+\author{Mateus Bittencourt Mercer \and Prof. Dr. Rodolfo Barriviera}
 \institute{Instituto Federal do Paraná Campus Londrina}
 \date{\today}
 % ---
@@ -341,7 +333,7 @@ distribuição e uma instalação manual.
         \begin{center}
             \includegraphics[width=.3\linewidth]{rig_mineracao.png}
         \end{center}
-        \legend{Fonte: \url{https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}}
+        Fonte: \url{https://mining.bg/13-gpu-mining-rig-nvidia-1060-3gb-8/}
     \end{figure}
 \end{frame}
 
@@ -372,7 +364,7 @@ distribuição e uma instalação manual.
     \begin{itemize}
         \item Planejamento
 
-        \item Programação
+        \item Modelagem
 
         \item Validação
 
@@ -394,8 +386,8 @@ distribuição e uma instalação manual.
         \item A distribuição já \textbf{detecta placas gráficas NVidia e
             minera Monero}
 
-        \item A ferramenta \code{archiso} é utilizada para a criação
-            \tectbf{baseada no Arch Linux}
+        \item A ferramenta archiso é utilizada para a criação
+            \textbf{baseada no Arch Linux}
 
         \item O desempenho mostrou resultados positivos sobre a
             distribuição
