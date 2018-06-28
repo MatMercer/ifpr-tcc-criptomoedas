@@ -105,7 +105,7 @@
 % ---
 
 % --- Informações do documento ---
-\title{Automatização de Mineração de criptomoedas Com Distribuição Linux}
+\title{Automatização de Mineração de Criptomoedas Com Distribuição Linux}
 \author{Mateus Bittencourt Mercer \\ Prof\@. Dr\@. Rodolfo Barriviera}
 \institute{Instituto Federal do Paraná Campus Londrina}
 \date{\today}
@@ -137,8 +137,7 @@
 \noindent\makebox[\textwidth][c]{%
 \begin{minipage}{10cm}
     Utilizar uma distribuição Linux para automatizar a configuração
-    do software de criptomoeda para otimizar o tempo de instalação do
-    usuário.
+    do software de criptomoeda.
 \end{minipage}
 }
 
@@ -150,8 +149,7 @@
 \begin{itemize} 
 
     \item Buscar alternativas de personalização de uma distribuição
-        Linux para a automatização da instalação dos drivers
-        genéricos;
+        Linux;
 
     \item Pesquisar diferentes criptomoedas e suas vantagens e
         desvantagens em diferentes hardwares;
@@ -206,10 +204,11 @@ distribuição e uma instalação manual.
     \begin{itemize}
         \item Quem minera recebe $N$ tokens pelo \textbf{trabalho} feito
             
-        \item Minerar é \textbf{validar transações} no Blockchain
+        \item Minerar é \textbf{validar transações} no blockchain
 
-        \item Os \textbf{nós na rede concorrem} para descobrir um número cujo o
-            hash SHA-256 possui $N$ zeros
+        \item Os \textbf{nós na rede concorrem} para descobrir um
+            número que quando juntado ao hash do bloco a ser minerado,
+            o hash dessa junção possui $N$ zeros
 
         \item Os blocos são encadeados, \textbf{imutáveis} e
             \textbf{distribuídos}. ``corrente de blocos'' 
@@ -225,7 +224,7 @@ distribuição e uma instalação manual.
     
     \begin{figure}[H]
         \caption{\label{fig:blockchain-hash}Gráfico da visão geral
-        do Blockchain.}
+        do blockchain.}
         \begin{center}
             \includegraphics[width=1\linewidth]{blockchain-hash.eps}
         \end{center}
@@ -241,11 +240,12 @@ distribuição e uma instalação manual.
     \framesubtitle{Usuários e Balanço}
     
     \begin{itemize}
-        \item Usuários são identificados com uma chave pública e
-            acessam sua carteira com sua chave privada
+        \item Usuários são \textbf{identificados com uma chave
+            pública} e
+            \textbf{acessam sua carteira com sua chave privada}
 
-        \item No Bitcoin o balanço é calculado pela lista de
-            transações no Blockchain
+        \item No Bitcoin o \textbf{balanço é calculado pela lista de
+            transações no blockchain}
 
     \end{itemize}
 \end{frame}
@@ -272,15 +272,15 @@ distribuição e uma instalação manual.
     \framesubtitle{Ethereum e Contratos Inteligentes}
     
     \begin{itemize}
-        \item Contratos inteligentes são scripts que podem ser
-            colocados no Blockchain
+        \item Contratos inteligentes são \textbf{programas que podem ser
+            colocados no blockchain}
 
         \item São \textbf{imutáveis}, \textbf{distribuídos} e
             \textbf{não necessitam de uma instituição terceira para
             serem validados}
 
         \item Essa validação tem uma taxa, quanto mais rápida, mais
-            cara, quem recebe esta taxa são os mineradores
+            cara, \textbf{quem recebe esta taxa são os mineradores}
     
     \end{itemize}
 \end{frame}
@@ -389,17 +389,14 @@ distribuição e uma instalação manual.
     \framesubtitle{Distribuição Munix}
 
     \begin{itemize}
-        \item Criação da distribuição Munix (\emph{Mining Unix}) 
+        \item Criação da \textbf{distribuição Munix} (\emph{Mining Unix}) 
 
-        \item A distribuição já detecta placas gráficas NVidia e
-            minera Monero
+        \item A distribuição já \textbf{detecta placas gráficas NVidia e
+            minera Monero}
 
         \item A ferramenta \code{archiso} é utilizada para a criação
-            baseada no Arch Linux
+            \tectbf{baseada no Arch Linux}
 
-        \item Foram feitos comparativos entre as distribuições e
-            Criptomoedas
-            
         \item O desempenho mostrou resultados positivos sobre a
             distribuição
 
